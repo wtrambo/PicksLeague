@@ -1,0 +1,373 @@
+2009-08-25
+----------
+* I am absolutely astonished that nearly all of the parsers worked properly
+  without having to rewrite much
+
+
+2007-11-21
+----------
+* Changed the "Daily Line" link to "Live Odds" -- I dunno, it makes more sense
+
+
+2007-10-05
+----------
+* Added elementary support for automatic linking of URLs so you don't
+  technically have to use the [url] formatting anymore, but I really would
+  rather you did; also, the code still needs a bit of work but it should be okay
+  for the moment
+* No clue why I didn't think of this before but I added a throbber to let you
+  know that your request to change your pick has gone through and is just
+  waiting to return; for about 5 minutes, I was using an actual throbber graphic
+  but abandoned it when it made the layout that isn't showing the date/time
+  information look silly
+* Turned off the neato "fade-to-orange" thing when you change your pick; I'm
+  messing with it and it'll probably come back at some point
+
+
+2007-09-27
+---------
+* Made the message board history a little more intelligent -- now you'll only be
+  given the option of directly jumping to the eight pages surrounding the
+  current page, although there are also next/previous/first/last links
+* I guess some favicon weirdness was introduced with the conversion to true
+  XHTML -- it's fixed now
+
+
+2007-09-26
+----------
+* Added the St. Louis Blues logo, as requested by Kurt
+* Finally imported the 2003 and 2004 data; unfortunately, the 2005 data is gone
+* Fixed a really dumb bug in the preferences menu having to do with the recent
+  data model migration
+* Started writing the caching system -- this will greatly improve the speed of
+  the big board, typically knocking off 2.2 or 2.3 seconds (a huge gain)
+* Actually fixed the Safari week-navigation bug
+
+
+2007-09-25
+----------
+* Added the original Buccaneers logo to the pool, as requested by Koci; touched
+  up the Vikings logo and made it look less stupid
+
+
+2007-09-24
+----------
+* Touched up the Titans and Giants logos; added the Lakeland Flying Tigers logo,
+  as requested by Keyon
+
+
+2007-09-22
+----------
+* Touched up the reminder email a little bit: you now have a link that you can
+  probably click and plus signs for those positive spreads to make them a bit
+  more explicit
+
+
+2007-09-21
+----------
+* Worked a little more on the splits page -- maybe a "result" column in
+  "pl_user_picks_vw" isn't such a bad idea after all
+
+
+2007-09-17
+----------
+* Migrated over the new database model -- for the most part, this was all
+  transparent to the user
+* Visible changes include the modified totals rows ("Wins This Week" instead of
+  "Weekly Percentage") and games which are over will now display their final
+  scores either in the tooltip (if you're not showing the extra date/time
+  information) or on the screen (if you are)
+* All of the pages are valid XHTML 1.0 Transitional, as far as I know; I'll
+  validate the CSS (a really aggravating task; I should probably just rewrite it
+  all) one of these days
+* Actually, it looks like all the CSS checks out fine; this is not to say that
+  it's well-written -- it could still certainly use an overhaul
+
+
+2007-09-15
+----------
+* Made our "BBCode" support case insensitive and sort of fixed excessively long
+  links messing up the page structure, though I should really do more with this
+
+
+2007-09-13
+----------
+* Finished off the statistics on the development big board and continued
+  overhauling the data model
+* Made the dev pages almost completely compliant with XHTML 1.0 Transitional
+* Added the Ajax Football Club logo, as requested by Blair
+* The new data model and webpages that go along with it will be ready for Week 3
+* Goofed around with caching the big board -- it seems pretty feasible
+* Old change -- I gave you back the ability to highlight stuff on the big board;
+  I don't really know if I like it but whatever
+
+
+2007-09-12
+----------
+* Threw in the statistics at the bottom of the development version of the big
+  board
+* Found a nice, general formula for computing "games back" -- it's solved using
+  the quadratic formula, that thing you learned about in 8th grade
+
+
+2007-09-11
+----------
+* Note to self: I need to import the data from past years
+
+
+2007-09-10
+----------
+* Set up a development version of the site so I can do my data model overhaul;
+  naturally, all of the changes will be almost completely transparent to the
+  user
+* Note to self: I need to improve the way we push games for all users
+
+
+2007-09-09
+----------
+* Uh, well, everything worked fine
+* Nothing to report (good news)
+
+
+2007-09-07
+----------
+* Oh my word, it looks as though everything might have gone without a hitch,
+  except that part where I get the first game right
+
+
+2007-09-06
+----------
+* Happy NFL Season, everybody! This truly is the most wonderful time of the year
+* Started what I think will evolve into a pretty decent FAQ page
+* Added [url=] functionality to the formatting
+* Added "Blog" and "FAQ" links to the header of every page
+
+
+2007-09-04
+----------
+* We're pretty much live now; the reminder system isn't quite done yet but it'll
+  be ready for tomorrow
+* You will all be pleased to know that our humble little community is now the #1
+  Google search result for "coinflipper"
+* Implemented a much nicer message board history and, moreover, pretty much
+  assured the need for SA-style post-jumping; you may thank me at your earliest
+  convenience
+* Centered the big board for you high-resolution whiners
+* Restored reverse chronology to the message board
+* Fixed a small bug in the automatic spread-updater having to do with time zones
+* Made the reminder system live; here's hoping...
+
+
+2007-09-03
+----------
+* "3" days left -- Dale Earnhardt (that's right, kids, I still like NASCAR)
+* Tried to get a nice mobile version of the reminder emails working but I think
+  character limits are gonna be too much of a factor
+* Cleaned up the message board a little bit (not noticeable)
+
+
+2007-09-02
+----------
+* Fixed a weird scheduling anomaly in week 8 -- I think it was due to that
+  ancient time when I was using USA Today's schedule to create mine (theirs had
+  typos)
+* "4" days left -- Longhorn Football national championships
+
+
+2007-09-01
+----------
+* Happy College Football Season! (No, I don't care about those stupid Thursday
+  games)
+* "5" days left -- Jeff Bagwell
+* Added a time zone cookie -- trust me, you'll like it if you don't live in the
+  Central time zone
+
+
+2007-08-31
+----------
+* "6" days left -- Longhorn College World Series titles
+
+
+2007-08-30
+----------
+* "7" days left -- Craig Biggio
+* Started work on the email reminder system
+* Changed the score updating interval to 5 minutes
+
+
+2007-08-29
+----------
+* "8" days left -- Troy Aikman
+
+
+2007-08-28
+----------
+* Put (what I hope are) the finishing touches on the scores/schedule/spreads
+  parser and activated its crontab entry for the final week of the preseason
+* I liked making the "10" burnt orange so much that I made the "9" Cowboys blue;
+  this will probably be a theme of some sort
+* I can't stand computer clocks; for some reason, this server's gets out of sync
+  after a while; I'll synchronize it daily so this won't be an issue
+* Added "Next/Previous Page" links to the bottom of the message board page
+  because, you know, it makes sense
+
+
+2007-08-27
+----------
+* Gave the appropriate treatment to the number "10" on the "days left" portion
+  of the (only so much longer) temporary front page
+* Fixed a small bug with the message board history which would display the "next
+  page" link if you weren't logged in
+
+
+2007-08-26
+----------
+* Finished writing the scores/schedule/spreads parser; figuring out a decent
+  timing policy for keeping everything updated
+* Added "previous page/next page" functionality to the message board
+
+
+2007-08-25
+----------
+* Once again changed where the "Daily Line" link points; I think we'll all be
+  very happy with this page
+* Worked on making a universal parser for that awesome point-spreads page; it
+  should definitely be ready for opening day
+
+
+2007-08-23
+----------
+* Wrote a score updater which parses totallyscored.com's XML feed but it might
+  not be used unless they can get their home/away designations straight
+
+
+2007-08-22
+----------
+* Added preseason week 3 to the database
+* Rewrote the regular season schedule-parser because USA Today sucks; ESPN.com's
+  schedule is actually very good
+
+
+2007-08-15
+----------
+* Rewrote the schedule-parsing code for the regular season using USA Today's
+  website instead of NFL.com; despite a bunch of silly, uh, typos on the USA
+  Today page, everything seems to have worked okay; it remains to be seen if USA
+  Today will properly update their website to reflect the flex scheduling
+
+
+2007-08-14
+----------
+* Sad realization that NFL.com changed their layout and that I'd have to rewrite
+  every bit of the code which automatically parses the NFL schedule and
+  scoreboard
+
+
+2007-08-12
+----------
+* Kept working on splits and previewed them to a few (extremely privileged)
+  folks
+* Created a Yahoo! pick 'em league to see what they're doing that we should (or
+  shouldn't) do; if you're interested in joining just to goof around, let me
+  know and I'll invite you
+* Notice a small flaw in the data model: each user should have an associated
+  season for which they are participating; this will probably be added before
+  the season starts
+
+
+2007-08-11
+----------
+* MySQL can go to hell (ERROR 1116 (HY000): Too many tables; MySQL can only use
+  61 tables in a join)
+* Working on some splits; if you have a special request, let me know
+
+
+2007-08-10
+----------
+* Changed the "Daily Line" link to a much better page of NFL spreads
+* Fixed a silly bug in the percentage-calculation code having to do with pushed
+  games
+* Removed one pixel of padding that was really getting on my nerves
+
+
+2007-08-09
+----------
+* Goofed around with the color schemes a little bit; put logos into the "simple"
+  style
+* If you actually read this, you should send me a message letting me know -- I'm
+  incredibly curious
+* Fixed up the message board a little bit, visually
+* The "post message" text area gets auto-focused now
+* Added delinquent logos for the Houston 1836 and Dallas Mavericks
+
+
+2007-08-08
+----------
+* Sort of cleaned up the silly buttons on the message board page
+* At some point in the past I added the little favicon
+* For some reason, I've been sending informational emails out which say this is
+  the "2008" version of the contest; mea culpa (that's Latin for "my bad, yo,
+  ain't no thang")
+* Since it was mentioned to me, IE 6 is most certainly not supported -- they
+  didn't bother to implement PNG transparency so I didn't bother to care about
+  IE 6
+
+
+2007-07-30
+----------
+* Kind of fixed a bug in IE, except that now it's a different bug
+* IE still sucks and I don't officially support it
+* Slight crisis averted with the apostrophe situation; it should be all good 
+  now
+
+
+2007-07-29
+----------
+* Moved the preferences success/failure message to a place that's actually 
+  visible once the page reloads
+* Toying with the idea of making the preferences pane its own window
+
+
+2007-07-26
+----------
+* Fixed the cookie issue by disallowing accesses to "coinflipper.org"
+
+
+2007-07-24
+----------
+* Removed a bit of stupid juice from the "simple" stylesheet
+* Fixed a cookie oversight -- they'll actually persist over multiple browser
+  sessions now and, you know, be useful
+* Made the tooltips for each game easier to access and more informative
+* Note to self: I should probably make the cookie domain ".coinflipper.org" so
+  that it won't matter whether the users navigate to http://coinflipper.org/ or
+  http://www.coinflipper.org/
+
+
+2007-07-23
+----------
+* Added a style-switching preference
+* Added label tags for all of the preferences (try clicking "Email" instead of
+  the input box)
+* Put the finishing touches on the "simple" style
+
+
+2007-07-22
+----------
+* Fixed some glitch having to do with escaping quotes on the message board
+* Started writing the style-switching code
+* Watched way too much of "Minority Report"
+* Ate grilled Hawaiian chicken at Hula Hut
+
+
+2007-07-21
+----------
+* Implemented the "show date/time under each game" preference
+* Created the first of (what I hope to be) a series of new styles for the site
+* Added Alok, Erica, and Blair as users and moved Nims, Peter, and Waldo into
+  obscurity
+* Cleaned up the Big Board code a little
+* Watched a lot of "American Gladiators"
+* Cheered for David Beckham
+* Stopped caring about supporting Internet Explorer
+  (http://sneden.net/files/seriously-IE.gif)

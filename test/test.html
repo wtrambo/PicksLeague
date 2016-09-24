@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function changetext() {
+				var save = document.getElementById('hello').innerHTML;
+				document.getElementById('hello').innerHTML = '<textarea>' + save + '</textarea>';
+			}
+		</script>
+	</head>
+	<body>
+		<div id="hello" style="border: 1px solid black; padding: 10px;" onClick="changetext()">
+			hello.
+		</div>
+	</body>
+</html>

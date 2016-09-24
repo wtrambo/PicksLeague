@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>NFL Picks League 2007</title>
+	<style type="text/css">
+	body {
+		cursor: default;
+		padding-top: 40px;
+	}
+
+	strong {
+		color: rgb(220, 220, 220);
+
+		/* burnt orange */
+/*
+		color: rgb(204, 85, 0);
+*/
+
+		/* cowboy blue */
+/*
+		color: rgb(0, 38, 84);
+*/
+
+		/* astro red */
+/*
+		color: rgb(149, 50, 44);
+*/
+
+		/* earnhardt black */
+		color: rgb(0, 0, 0);
+
+		font-size: 320px;
+		font-family: Helvetica;
+	}
+
+	em {
+		font-size: 96px;
+		letter-spacing: -1px;
+	}
+	td {
+		text-align: center;
+		line-height: 0.80;
+		padding: 30px;
+	}
+	a, a:visited {
+		font-family: Verdana;
+		cursor: pointer;
+		color: rgb(0, 0, 255);
+		font-size: 130%;
+	}
+	</style>
+</head>
+<body>
+	<center>
+		<table border="0">
+			<tr>
+				<td><img src="images/picks-logo.png" /></td>
+				<td>
+					<strong><?= floor((mktime(19, 30, 0, 9, 6, 2007, 1) - time()) / (60 * 60 * 24)) ?></strong><br />
+					<em>days</em>
+				</td>
+			</tr>
+		</table>
+		<br />
+		<a href="blog.txt">Development Blog</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="bigboard.php">Big Board Beta</a>
+	</center>
+</body>
+</html>

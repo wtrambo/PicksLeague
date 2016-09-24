@@ -1,0 +1,29 @@
++ Splits page
++ Change up the game listing colors
++ Update spreads
++ Message board history
++ Reminder system
++ Better message board history
++ Change "Friday at 6:30pm" to final score
++ FAQ page
++ Safari week-navigation bug
++ Games won in addition to percentages
+
+* Edit/delete message board posts
+* Side bet system
+* Front page sorting
+* More styles
+* Avatars for each user
+* Picks league mobile
+* Better switching between user profiles
+* Show when new message board posts have been made
+* Link to scoreboards, etc. from the big board
+* Full caching system which makes sense
+* True stylesheet switching (no handling of styles outside of the sheet)
+* Image functionality for the message board
+* Real-time updates
+
+- Add your own icon
+- Make the daily line open in a new window
+- Indicate that a game has been picked by a user
+- Touch-up the Patriots (more red) and Buckeyes (more scarlet) logos [give me a break]

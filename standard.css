@@ -1,0 +1,520 @@
+@import url("logos.css");
+
+/* general definitions */
+
+body {
+	font-family: Verdana, sans-serif;
+	cursor: default;
+	background-image: url("images/bg.png");
+	background-color: rgb(221, 221, 221);
+	background-repeat: repeat-x;
+	text-align: center;
+}
+
+a {
+	color: blue;
+	cursor: pointer;
+}
+
+a:hover {
+	color: red;
+}
+
+h1 {
+	font-size: 28pt;
+	letter-spacing: -2pt;
+}
+
+.error {
+	font-weight: bold;
+	color: rgb(255, 0, 0);
+	letter-spacing: -1px;
+}
+
+.saved {
+	font-weight: bold;
+	font-size: 75%;
+	color: green;
+}
+
+label {
+	cursor: pointer;
+}
+
+
+/* stuff at the top of the page */
+form#loginnav {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+#header {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+#header #welcome {
+	text-align: left;
+}
+
+#header #left {
+}
+
+#header #center {
+}
+
+#header #right {
+	vertical-align: top;
+}
+
+#header input {
+	font-family: Verdana;
+	font-size: 60%;
+	border: 1px solid black;
+	padding: 2px;
+	margin-bottom: 2px;
+}
+
+#header label {
+	font-size: 60%;
+}
+
+#header #username,
+#header #password {
+	background-image: none;
+	background-color: white;
+}
+
+#header #login,
+#header #logout {
+	background-image: url("images/bg.png");
+	background-color: rgb(170, 170, 170);
+	background-repeat: repeat-x;
+}
+
+#header #currentTime {
+	font-size: 80%;
+	text-align: right;
+}
+
+#header #links {
+	font-size: 80%;
+	text-align: right;
+}
+
+#header #links .currentPage {
+	font-weight: bold;
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+
+
+
+#bigboard-wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+#bigboard {
+/*
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+*/
+	empty-cells: show;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	border-spacing: 0px;
+	table-layout: fixed;
+}
+
+#bigboard td {
+	background: rgb(255, 255, 255);
+	border-right: 1px solid black;
+	text-align: center;
+	padding: 4px;
+}
+
+#bigboard .week {
+	text-align: center;
+	background: transparent;
+	border-bottom: 1px solid black;
+}
+
+#bigboard .week #weekSelect {
+	text-align: center;
+	font-weight: bold;
+	background-color: rgb(230, 230, 230);
+	border: 1px solid black;
+	font-size: 130%;
+}
+
+#bigboard .week a {
+	font-size: 70%;
+	font-weight: bold;
+}
+
+#bigboard .user {
+	text-align: left;
+	vertical-align: bottom;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 85%;
+	line-height: 80%;
+	/*background: url("images/user.png");*/
+	background-color: #ffffff;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	min-height: 90px;
+	cursor: pointer;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-bottom: 2px;
+}
+
+#bigboard .game {
+	text-align: right;
+	background: url("images/bg.png");
+	/*background-color: rgb(154, 164, 255);*/
+	background-color: rgb(125, 125, 240);
+	background-repeat: repeat-x;
+	border-left: 1px solid black;
+	white-space: nowrap;
+	line-height: 11px;
+}
+
+#bigboard .pickbig {
+	font-size: 80%;
+	letter-spacing: -1px;
+}
+
+#bigboard .picklittle {
+	font-size: 70%;
+}
+
+#bigboard .total {
+	letter-spacing: -0.05em;
+	font-weight: bold;
+	background: url("images/bg.png");
+	background-color: rgb(202, 214, 253);
+	background-repeat: repeat-x;
+	letter-spacing: -1px;
+}
+
+#bigboard .besttotal {
+	letter-spacing: -0.05em;
+	font-weight: bold;
+	background: url("images/bg.png");
+	background-color: rgb(255, 230, 100);
+	background-repeat: repeat-x;
+	letter-spacing: -1px;
+}
+
+#bigboard .gamegroup0 {
+	background-color: rgb(100, 150, 205);
+}
+
+#bigboard .gamegroup1 {
+	background-color: rgb(190, 220, 255);
+}
+
+#bigboard .game .gametext {
+	font-weight: bold;
+	font-size: 70%;
+}
+
+#bigboard .game .gamedate {
+	font-size: 60%;
+}
+
+#bigboard .game .gamescore {
+	font-size: 60%;
+	font-style: italic;
+}
+
+#bigboard .push {
+	font-style: italic;
+	background-image: url("images/bg.png");
+	background-color: rgb(170, 170, 170);
+	background-repeat: repeat-x;
+	color: rgb(102, 102, 102);
+}
+
+#bigboard .none {
+	background-image: url("images/bg.png");
+	background-color: rgb(230, 230, 230);
+	background-repeat: repeat-x;
+}
+
+#bigboard .win {
+	font-weight: bold;
+	background-image: url("images/bg.png");
+	background-color: rgb(110, 240, 110);
+	background-repeat: repeat-x;
+	color: rgb(0, 128, 0);
+}
+
+#bigboard .loss {
+	background-image: url("images/bg.png");
+	background-color: rgb(240, 110, 110);
+	background-repeat: repeat-x;
+	color: rgb(136, 0, 0);
+}
+
+#bigboard .changeable {
+	background-image: url("images/bg.png");
+	background-color: rgb(210, 180, 210);
+	background-repeat: repeat-x;
+	cursor: pointer;
+}
+
+#bigboard .changed {
+	background-image: url("images/bg.png");
+	background-color: rgb(250, 197, 71);
+	background-repeat: repeat-x;
+	color: rgb(204, 119, 34);
+	cursor: pointer;
+}
+
+#bigboard #lastgame td {
+	border-bottom-style: none;
+}
+
+#bigboard .pctlabel {
+	text-align: right;
+	border-left: 1px solid black;
+	background-image: url("images/bg.png");
+	background-color: rgb(202, 214, 253);
+	background-repeat: repeat-x;
+}
+
+#bigboard .weekly td {
+	font-size: 70%;
+	border-top: 1px solid black;
+}
+
+#bigboard .cumulative td {
+	font-size: 70%;
+}
+
+#bigboard .gamesback td {
+	font-size: 70%;
+	border-bottom: 1px solid black;
+}
+
+
+
+/* stuff for other parts of the site */
+
+.fancyTable {
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.fancyTable td {
+	padding: 10px;
+	background-image: url("images/bg.png");
+	background-repeat: repeat-x;
+}
+
+.fancyTable .field {
+	text-align: right;
+	font-weight: bold;
+	white-space: nowrap;
+	border-right: 1px solid black;
+	background-image: url("images/bg.png");
+	background-color: rgb(142, 174, 198);
+	background-repeat: repeat-x;
+	vertical-align: top;
+}
+
+.fancyTable .value {
+	text-align: left;
+	background-image: url("images/bg.png");
+	background-color: rgb(230, 230, 230);
+	background-repeat: repeat-x;
+}
+
+.fancyTable input,
+.fancyTable textarea,
+.fancyTable select {
+	border: 1px solid black;
+	font-family: Verdana;
+	font-size: 80%;
+}
+
+.fancyTable input,
+.fancyTable textarea {
+	padding: 2px;
+}
+
+.fancyTable .value .phone {
+	text-align: center;
+}
+
+.fancyTable .fancybutton {
+	background-image: url("images/bg.png");
+	background-color: rgb(170, 170, 170);
+	background-repeat: repeat-x;
+}
+
+
+.verticalTable {
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+}
+
+.verticalTable td {
+        padding: 10px;
+        background-image: url("images/bg.png");
+        background-repeat: repeat-x;
+}
+
+.verticalTable .field {
+        text-align: center;
+        font-weight: bold;
+        white-space: nowrap;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        /*background-color: rgb(103, 142, 171);*/
+        background-image: url("images/bg.png");
+        background-color: rgb(142, 174, 198);
+        background-repeat: repeat-x;
+        vertical-align: top;
+}
+
+.verticalTable .lastColumn {
+        border-right: none;
+}
+
+.verticalTable .value {
+        text-align: left;
+        background-image: url("images/bg.png");
+        background-color: rgb(230, 230, 230);
+        background-repeat: repeat-x;
+	border-right: 1px solid black;
+}
+
+.verticalTable input,
+.verticalTable textarea,
+.verticalTable select {
+        border: 1px solid black;
+        font-family: Verdana;
+        font-size: 80%;
+}
+
+.verticalTable input,
+.verticalTable textarea {
+        padding: 2px;
+}
+
+.verticalTable .value .phone {
+        text-align: center;
+}
+
+.verticalTable #submit {
+        background-image: url("images/bg.png");
+        background-color: rgb(170, 170, 170);
+        background-repeat: repeat-x;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+
+/* message board definitions */
+
+.messageContainer {
+	width: 75%;
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.messageHeader {
+	background-repeat: repeat-x;
+}
+
+.messageLeft {
+	text-align: left;
+	vertical-align: top;
+	background-image: url("images/bg.png");
+	background-color: rgb(110, 200, 110);
+	background-repeat: repeat-x;
+	border-right: 1px solid black;
+	width: 20%;
+}
+
+.messageUser {
+	font-weight: bold;
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.messageDate {
+	font-style: italic;
+	font-size: 70%;
+}
+
+.messageRight {
+	background-image: url("images/bg.png");
+	background-color: rgb(230, 230, 230);
+	background-repeat: repeat-x;
+	text-align: left;
+	vertical-align: top;
+	padding-bottom: 20px;
+}
+
+.messageText {
+	font-size: 80%;
+	padding-bottom: 20px;
+}
+
+.messageHistory {
+	width: 75%;
+	font-size: 100%;
+	text-align: right;
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.messageHistory a {
+	text-decoration: none;
+	color: rgb(140, 140, 140);
+	padding: 2px;
+}
+
+.messageHistory a:hover {
+	background: rgb(255, 255, 255);
+}
+
+.messageHistory .currentPage {
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+}
+
+/*
+@media screen and (max-width: 480px) {
+	td#right {
+		display: none;
+	}
+
+	td.user,
+	td.picklittle,
+	td.pickbig,
+	td.total {
+		display: none;
+	}
+
+	td.self {
+		display: table-cell;
+	}
+}
+*/

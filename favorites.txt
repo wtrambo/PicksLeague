@@ -1,0 +1,27 @@
+mysql> SELECT users.user_name, favorites.favorites, picks.picks, favorites.favorites / picks.picks AS pct FROM (SELECT user_name FROM pl_users WHERE season = 2012) AS users JOIN (SELECT user_name, COUNT(*) AS favorites FROM pl_user_picks_vw WHERE week > 0 AND (season != 2012 OR week < 11) AND ((pick = away_team AND spread > 0) OR (pick = home_team AND spread < 0)) GROUP BY user_name) AS favorites ON users.user_name = favorites.user_name JOIN (SELECT user_name, COUNT(*) AS picks FROM pl_picks WHERE week > 0 AND (season != 2012 OR week < 11) GROUP BY user_name) AS picks ON favorites.user_name = picks.user_name ORDER BY pct DESC;
++--------------+-----------+-------+--------+
+| user_name    | favorites | picks | pct    |
++--------------+-----------+-------+--------+
+| lzimmermann  |      1357 |  1977 | 0.6864 |
+| agarcia      |       445 |   652 | 0.6825 |
+| ewang        |       912 |  1359 | 0.6711 |
+| tgivens      |       590 |   880 | 0.6705 |
+| bludwiczak   |       429 |   658 | 0.6520 |
+| kenners      |       454 |   709 | 0.6403 |
+| nnguyen      |       257 |   402 | 0.6393 |
+| thighland    |      1063 |  1670 | 0.6365 |
+| ksomandar    |      1248 |  2031 | 0.6145 |
+| bshiff       |       846 |  1405 | 0.6021 |
+| zschank      |       980 |  1647 | 0.5950 |
+| avasudev     |       278 |   472 | 0.5890 |
+| qmartindale  |       973 |  1655 | 0.5879 |
+| jeff         |      1207 |  2122 | 0.5688 |
+| wrambo       |        81 |   144 | 0.5625 |
+| rwilliams    |       924 |  1650 | 0.5600 |
+| dschexnayder |      1184 |  2193 | 0.5399 |
+| jpnance      |      1173 |  2193 | 0.5349 |
+| ckoci        |       865 |  1682 | 0.5143 |
+| dgrysen      |       717 |  1416 | 0.5064 |
++--------------+-----------+-------+--------+
+20 rows in set (0.00 sec)
+

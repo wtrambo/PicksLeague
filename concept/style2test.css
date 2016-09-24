@@ -1,0 +1,321 @@
+/* general definitions */
+
+body {
+	font-family: Verdana;
+	background: #dddddd;
+	cursor: default;
+}
+
+a {
+	color: blue;
+}
+
+a:hover {
+	color: red;
+}
+
+
+
+/* stuff at the top of the page */
+#header {
+}
+
+#header #left {
+}
+
+#header #center {
+}
+
+#header #right {
+	vertical-align: top;
+}
+
+#header input {
+	font-family: Verdana;
+	font-size: 60%;
+	border: 1px solid black;
+	padding: 2px;
+	margin-bottom: 2px;
+}
+
+#header label {
+	font-size: 60%;
+}
+
+#header #login,
+#header #logout {
+	background-image: url("images/push.png");
+	background-color: rgb(170, 170, 170);
+	background-repeat: repeat-x;
+}
+
+#header #currentTime {
+	font-size: 80%;
+	text-align: right;
+}
+
+#header #links {
+	font-size: 80%;
+	text-align: right;
+}
+
+
+
+
+#bigboard {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+#bigboard td {
+	background: white;
+	border-right: 1px solid black;
+	text-align: center;
+}
+
+#bigboard .week {
+	text-align: center;
+	background: transparent;
+	border-bottom: 1px solid black;
+}
+
+#bigboard .week #weekSelect {
+	text-align: center;
+	font-weight: bold;
+	background-color: rgb(230, 230, 230);
+	border: 1px solid black;
+	font-size: 130%;
+}
+
+#bigboard .week a {
+	font-size: 70%;
+	font-weight: bold;
+}
+
+#bigboard .user {
+	text-align: left;
+	vertical-align: bottom;
+	text-transform: uppercase;
+	/*font-family: Bitstream Vera Sans Mono;*/
+	font-family: Lucida Console;
+	font-weight: bold;
+	font-size: 85%;
+	line-height: 80%;
+	/*background: url("images/user.png");*/
+	background-color: #cfd4ff;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	min-height: 90px;
+}
+
+#bigboard .game {
+	text-align: right;
+	font-weight: bold;
+	font-size: 70%;
+	background: url("images/game.png");
+	/*background-color: rgb(154, 164, 255);*/
+	background-color: rgb(125, 125, 240);
+	background-repeat: repeat-x;
+	border-left: 1px solid black;
+	white-space: nowrap;
+}
+
+#bigboard .push {
+	font-size: 70%;
+	font-style: italic;
+	background: url("images/push.png");
+	background-color: rgb(170, 170, 170);
+	background-repeat: repeat-x;
+	color: #666666;
+}
+
+#bigboard .none {
+	font-size: 70%;
+	background: url("images/none.png");
+	background-color: rgb(230, 230, 230);
+	background-repeat: repeat-x;
+}
+
+#bigboard .win {
+	font-size: 70%;
+	font-weight: bold;
+	background: url("images/win.png");
+	/*background-color: rgb(142, 232, 139);*/
+	background-color: rgb(110, 240, 110);
+	background-repeat: repeat-x;
+	color: green;
+}
+
+#bigboard .loss {
+	font-size: 70%;
+	background: url("images/loss.png");
+	/*background-color: rgb(255, 149, 153);*/
+	background-color: rgb(240, 110, 110);
+	background-repeat: repeat-x;
+	color: darkred;
+}
+
+#bigboard .changeable {
+	font-size: 70%;
+	background-image: url("images/changeable.png");
+	background-color: rgb(210, 180, 210);
+	background-repeat: repeat-x;
+	cursor: pointer;
+}
+
+#bigboard .changed {
+	font-size: 70%;
+	background: url("images/changed.png");
+	background-color: rgb(250, 197, 71);
+	background-repeat: repeat-x;
+	color: #CC7722;
+	cursor: pointer;
+}
+
+#bigboard #lastgame td {
+	border-bottom-style: none;
+}
+
+#bigboard .pctlabel {
+	text-align: right;
+	border-left: 1px solid black;
+	background: url("images/total.png");
+	background-color: rgb(202, 214, 253);
+	background-repeat: repeat-x;
+}
+
+#bigboard .weekly td {
+	font-size: 70%;
+	border-top: 1px solid black;
+}
+
+#bigboard .cumulative td {
+	font-size: 70%;
+}
+
+#bigboard .gamesback td {
+	font-size: 70%;
+	border-bottom: 1px solid black;
+}
+
+#bigboard .total {
+	letter-spacing: -0.05em;
+	font-weight: bold;
+	background: url("images/total.png");
+	background-color: rgb(202, 214, 253);
+	background-repeat: repeat-x;
+}
+
+#bigboard .besttotal {
+	letter-spacing: -0.05em;
+	font-weight: bold;
+	background: url("images/besttotal.png");
+	background-color: rgb(255, 218, 81);
+	background-repeat: repeat-x;
+}
+
+
+
+/* team logos */
+
+#bigboard .cowboys {
+	background: url("logos/cowboys.png");
+}
+
+#bigboard .steelers {
+	background: url("logos/steelers.png");
+}
+
+#bigboard .texans {
+	background: url("logos/texans.png");
+}
+
+#bigboard .broncos {
+	background: url("logos/broncos.png");
+}
+
+#bigboard .oilers {
+	background: url("logos/oilers.png");
+}
+
+#bigboard .patriots {
+	background: url("logos/patriots.png");
+}
+
+#bigboard .colts {
+	background: url("logos/colts.png");
+}
+
+#bigboard .redskins {
+	background: url("logos/redskins.png");
+}
+
+#bigboard .packers {
+	background: url("logos/packers.png");
+}
+
+#bigboard .jaguars {
+	background: url("logos/jaguars.png");
+}
+
+#bigboard .bills {
+	background: url("logos/bills.png");
+}
+
+#bigboard .falcons {
+	background: url("logos/falcons.png");
+}
+
+.error {
+	font-weight: bold;
+	color: rgb(255, 0, 0);
+}
+
+.updateProfile {
+	border: 1px solid black;
+}
+
+.updateProfile td {
+	padding: 10px;
+	background-image: url("images/bg.png");
+	background-repeat: repeat-x;
+}
+
+.updateProfile .field {
+	text-align: right;
+	font-weight: bold;
+	white-space: nowrap;
+	border-right: 1px solid black;
+	/*background-color: rgb(103, 142, 171);*/
+	background-color: rgb(142, 174, 198);
+}
+
+.updateProfile .value {
+	text-align: left;
+	white-space: nowrap;
+	background-color: rgb(230, 230, 230);
+}
+
+.updateProfile input,
+.updateProfile textarea,
+.updateProfile select {
+	border: 1px solid black;
+	font-family: Verdana;
+	font-size: 80%;
+}
+
+.updateProfile input,
+.updateProfile textarea {
+	padding: 2px;
+}
+
+.updateProfile .value .phone {
+	text-align: center;
+}
+
+.updateProfile #submit {
+	background-image: url("images/bg.png");
+	background-color: rgb(170, 170, 170);
+	background-repeat: repeat-x;
+}

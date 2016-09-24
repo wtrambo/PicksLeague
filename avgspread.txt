@@ -1,0 +1,52 @@
+mysql> SELECT s.season, s.avg_spread, h.home_wins FROM (SELECT season, AVG(spread) AS avg_spread FROM pl_games WHERE week > 0 GROUP BY season) AS s JOIN (SELECT season, COUNT(*) AS home_wins FROM pl_winners_vw WHERE week > 0 AND winner = home_team GROUP BY season) AS h ON s.season = h.season ORDER BY season;
++--------+-------------------+-----------+
+| season | avg_spread        | home_wins |
++--------+-------------------+-----------+
+|   2003 |      -2.513671875 |       127 |
+|   2004 |      -2.384765625 |       121 |
+|   2006 |       -2.67578125 |       124 |
+|   2007 |        -2.0390625 |       140 |
+|   2008 |       -2.29296875 |       124 |
+|   2009 |        -2.2890625 |       123 |
+|   2010 |            -2.125 |       129 |
+|   2011 |         -2.328125 |       132 |
+|   2012 | -1.77272727272727 |        82 |
++--------+-------------------+-----------+
+9 rows in set (0.00 sec)
+
+
+
+mysql> SELECT s.season, s.avg_spread, h.home_wins FROM (SELECT season, AVG(spread) AS avg_spread FROM pl_games WHERE week > 0 GROUP BY season) AS s JOIN (SELECT season, COUNT(*) AS home_wins FROM pl_winners_vw WHERE week > 0 AND week < 13 AND winner = home_team GROUP BY season) AS h ON s.season = h.season ORDER BY season;
++--------+-------------------+-----------+
+| season | avg_spread        | home_wins |
++--------+-------------------+-----------+
+|   2003 |      -2.513671875 |        82 |
+|   2004 |      -2.384765625 |        79 |
+|   2006 |       -2.67578125 |        96 |
+|   2007 |        -2.0390625 |        92 |
+|   2008 |       -2.29296875 |        80 |
+|   2009 |        -2.2890625 |        82 |
+|   2010 |            -2.125 |        86 |
+|   2011 |         -2.328125 |        90 |
+|   2012 | -1.77272727272727 |        82 |
++--------+-------------------+-----------+
+9 rows in set (0.00 sec)
+
+
+
+mysql> SELECT season, AVG(away_score) AS away_avg, AVG(home_score) AS home_avg, (AVG(away_score) - AVG(home_score)) AS score_spread, AVG(spread) AS vegas_spread FROM pl_games WHERE week > 0 GROUP BY season ORDER BY season;
++--------+----------+----------+--------------+-------------------+
+| season | away_avg | home_avg | score_spread | vegas_spread      |
++--------+----------+----------+--------------+-------------------+
+|   2003 |  19.0430 |  22.5977 |      -3.5547 |      -2.513671875 |
+|   2004 |  20.2305 |  22.7383 |      -2.5078 |      -2.384765625 |
+|   2006 |  20.2344 |  21.0820 |      -0.8477 |       -2.67578125 |
+|   2007 |  20.2539 |  23.1211 |      -2.8672 |        -2.0390625 |
+|   2008 |  20.7500 |  23.3086 |      -2.5586 |       -2.29296875 |
+|   2009 |  20.3633 |  22.5703 |      -2.2070 |        -2.2890625 |
+|   2010 |  21.0898 |  22.9844 |      -1.8945 |            -2.125 |
+|   2011 |  20.5469 |  23.8125 |      -3.2656 |         -2.328125 |
+|   2012 |  22.4432 |  23.6307 |      -1.1875 | -1.77272727272727 |
++--------+----------+----------+--------------+-------------------+
+9 rows in set (0.01 sec)
+

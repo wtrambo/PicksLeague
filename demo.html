@@ -1,0 +1,562 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="style3.css" type="text/css" />
+		<title>
+			Conceptual Big Board
+		</title>
+		<script type="text/javascript">
+			/*
+			if (navigator.appName == "Microsoft Internet Explorer") {
+				document.write("<link href=\"style2-ie.css\" rel=\"stylesheet\" type=\"text/css\">\n");
+			}
+			else {
+				document.write("<link href=\"style2.css\" rel=\"stylesheet\" type=\"text/css\">\n");
+			}
+*/
+
+			function bg(e, home, away, r, g, b) {
+				if (r == 230) {
+					a = document.getElementById(e);
+
+					a.style.backgroundImage = "none";
+					a.style.color = "#cc7722";
+
+					if (a.firstChild.nodeValue == home) {
+						a.firstChild.nodeValue = away;
+					}
+					else {
+						a.firstChild.nodeValue = home;
+					}
+				}
+
+				if (r < 250) r += 2;
+				if (g > 197) g -= 4;
+				if (b > 71)  b -= 6;
+
+				document.getElementById(e).style.backgroundColor = "rgb(" +  r + ", " + g + ", " + b + ")";
+
+				if ((r >= 250) && (g <= 197) && (b <= 71)) {
+					document.getElementById(e).style.color = "#cc7722";
+					document.getElementById(e).style.backgroundColor = "rgb(250, 197, 71)";
+					document.getElementById(e).style.backgroundImage = "url('images/changed.png')";
+					document.getElementById(e).className = "changed";
+					return;
+				}
+
+				setTimeout("bg('" + e + "', null, null, " + r + ", " + g + ", " + b + ")", 20);
+			}
+		</script>
+	</head>
+
+	<body onSelectStart="return false;" onLoad="document.getElementById('username').focus()">
+		<table id="header" cellspacing="0" cellpadding="4" width="100%">
+			<tr>
+				<td id="left" width="10">
+					<input id="username" type="text" size="15"><br>
+					<input id="password" type="password" size="15">
+				</td>
+				<td id="center">
+					<input id="login" type="submit" value="Sign In">
+				</td>
+				<td id="right">
+					<div id="currentTime">July 9, 2006 - 11:59:03pm</div>
+					<div id="links">
+						<a href="#">Big Board</a> | 
+						<a href="#">Standings</a> | 
+						<a href="#">Make Picks</a> | 
+						<a href="#"><b>Daily Line</b></a> | 
+						<a href="#">Post Message</a> | 
+						<a href="#">Message Board</a>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+<br>
+
+		<table id="bigboard" cellspacing="0" cellpadding="4" width="100%">
+			<tr>
+				<td class="week" width="15%">
+					<select id="weekSelect" onChange="alert(this.value);">
+						<option>Week 1</option>
+						<option>Week 2</option>
+						<option>Week 3</option>
+						<option>Week 4</option>
+						<option>Week 5</option>
+						<option>Week 6</option>
+						<option>Week 7</option>
+						<option>Week 8</option>
+						<option>Week 9</option>
+						<option>Week 10</option>
+						<option>Week 11</option>
+						<option>Week 12</option>
+						<option>Week 13</option>
+						<option>Week 14</option>
+						<option>Week 15</option>
+						<option>Week 16</option>
+						<option>Week 17</option>
+					</select>
+					<br>
+					<a href="#">Previous</a> | <a href="#">Next</a>
+				</td>
+				<td class="user texans" width="4%">G<br>r<br>y<br>s<br>e<br>n</td>
+				<td class="user broncos" width="4%">R<br>o<br>b</td>
+				<td class="user oilers" width="4%">S<br>c<br>h<br>e<br>x</td>
+				<td class="user broncos" width="4%">T<br>r<br>e<br>v<br>o<br>r</td>
+				<td class="user packers" width="4%">K<br>u<br>r<br>t</td>
+				<td class="user texans" width="4%">W<br>a<br>l<br>d<br>o</td>
+				<td class="user texans" width="4%">R<br>y<br>a<br>n</td>
+				<td class="user steelers" width="4%">J<br>e<br>f<br>f</td>
+				<td class="user patriots" width="4%">M<br>a<br>t<br>t</td>
+				<td class="user cowboys" width="4%">P<br>a<br>t<br>r<br>i<br>c<br>k</td>
+				<td class="user redskins" width="4%">E<br>r<br>i<br>c</td>
+				<td class="user cowboys" width="4%">J<br>o<br>h<br>n</td>
+				<td class="user texans" width="4%">L<br>u<br>k<br>e</td>
+				<td class="user cowboys" width="4%">K<br>e<br>y<br>o<br>n</td>
+				<td class="user broncos" width="4%">N<br>i<br>m<br>s</td>
+				<td class="user cowboys" width="4%">K<br>a<br>t<br>i<br>e</td>
+				<td class="user jaguars" width="4%">S<br>t<br>e<br>p<br>h<br>e<br>n</td>
+				<td class="user colts" width="4%">D<br>e<br>v<br>i<br>n</td>
+				<td class="user bills" width="4%">K<br>u<br>a<br>n</td>
+				<td class="user falcons" width="4%">W<br>i<br>l<br>l</td>
+			</tr>
+			<tr>
+				<td class="game">MIA vs. PIT (-2.5)</td>
+				<td class="win" id="0">PIT</td>
+				<td class="loss">MIA</td>
+				<td class="loss">MIA</td>
+				<td class="loss">MIA</td>
+				<td class="loss">MIA</td>
+				<td class="win">PIT</td>
+				<td class="win">PIT</td>
+				<td class="loss">MIA</td>
+				<td class="loss">MIA</td>
+				<td class="win">PIT</td>
+				<td class="win">PIT</td>
+				<td class="loss">MIA</td>
+				<td class="loss">MIA</td>
+				<td class="loss">MIA</td>
+				<td class="loss">MIA</td>
+				<td class="win">PIT</td>
+				<td class="loss">MIA</td>
+				<td class="win">PIT</td>
+				<td class="loss">MIA</td>
+				<td class="win">PIT</td>
+			</tr>
+			<tr>
+				<td class="game">ATL vs. CAR (-4.5)</td>
+				<td class="win" id="1">ATL</td>
+				<td class="loss">CAR</td>
+				<td class="loss">CAR</td>
+				<td class="win">ATL</td>
+				<td class="win">ATL</td>
+				<td class="loss">CAR</td>
+				<td class="loss">CAR</td>
+				<td class="loss">CAR</td>
+				<td class="loss">CAR</td>
+				<td class="win">ATL</td>
+				<td class="loss">CAR</td>
+				<td class="loss">CAR</td>
+				<td class="win">ATL</td>
+				<td class="win">ATL</td>
+				<td class="win">ATL</td>
+				<td class="win">ATL</td>
+				<td class="loss">CAR</td>
+				<td class="loss">CAR</td>
+				<td class="win">ATL</td>
+				<td class="win">ATL</td>
+			</tr>
+			<tr>
+				<td class="game">BAL vs. TB (+3.5)</td>
+				<td class="win" id="2">TB</td>
+				<td class="loss">BAL</td>
+				<td class="loss">BAL</td>
+				<td class="loss">BAL</td>
+				<td class="win">TB</td>
+				<td class="win">TB</td>
+				<td class="win">TB</td>
+				<td class="win">TB</td>
+				<td class="win">TB</td>
+				<td class="win">TB</td>
+				<td class="loss">BAL</td>
+				<td class="loss">BAL</td>
+				<td class="win">TB</td>
+				<td class="win">TB</td>
+				<td class="loss">BAL</td>
+				<td class="loss">BAL</td>
+				<td class="win">TB</td>
+				<td class="loss">BAL</td>
+				<td class="win">TB</td>
+				<td class="win">TB</td>
+			</tr>
+			<tr>
+				<td class="game">BUF vs. NE (+1.5)</td>
+				<td class="loss" id="3">BUF</td>
+				<td class="loss">BUF</td>
+				<td class="loss">BUF</td>
+				<td class="win">NE</td>
+				<td class="win">NE</td>
+				<td class="loss">BUF</td>
+				<td class="win">NE</td>
+				<td class="win">NE</td>
+				<td class="loss">BUF</td>
+				<td class="loss">BUF</td>
+				<td class="loss">BUF</td>
+				<td class="win">NE</td>
+				<td class="win">NE</td>
+				<td class="win">NE</td>
+				<td class="loss">BUF</td>
+				<td class="loss">BUF</td>
+				<td class="win">NE</td>
+				<td class="win">NE</td>
+				<td class="loss">BUF</td>
+				<td class="win">NE</td>
+			</tr>
+			<tr>
+				<td class="game">CIN vs. KC (+4.5)</td>
+				<td class="win" id="4">CIN</td>
+				<td class="loss">KC</td>
+				<td class="loss">KC</td>
+				<td class="loss">KC</td>
+				<td class="loss">KC</td>
+				<td class="loss">KC</td>
+				<td class="loss">KC</td>
+				<td class="loss">KC</td>
+				<td class="loss">KC</td>
+				<td class="loss">KC</td>
+				<td class="loss">KC</td>
+				<td class="win">CIN</td>
+				<td class="win">CIN</td>
+				<td class="loss">KC</td>
+				<td class="loss">KC</td>
+				<td class="win">CIN</td>
+				<td class="win">CIN</td>
+				<td class="loss">KC</td>
+				<td class="win">CIN</td>
+				<td class="win">CIN</td>
+			</tr>
+			<tr>
+				<td class="game">DEN vs. STL (-2.5)</td>
+				<td class="win" id="5">STL</td>
+				<td class="win">STL</td>
+				<td class="win">STL</td>
+				<td class="win">STL</td>
+				<td class="win">STL</td>
+				<td class="win">STL</td>
+				<td class="win">STL</td>
+				<td class="win">STL</td>
+				<td class="loss">DEN</td>
+				<td class="loss">DEN</td>
+				<td class="loss">DEN</td>
+				<td class="win">STL</td>
+				<td class="win">STL</td>
+				<td class="win">STL</td>
+				<td class="win">STL</td>
+				<td class="win">STL</td>
+				<td class="loss">DEN</td>
+				<td class="loss">DEN</td>
+				<td class="loss">DEN</td>
+				<td class="loss">DEN</td>
+			</tr>
+			<tr>
+				<td class="game">NO vs. CLE (+1.5)</td>
+				<td class="loss" id="6">NO</td>
+				<td class="win">CLE</td>
+				<td class="win">CLE</td>
+				<td class="win">CLE</td>
+				<td class="win">CLE</td>
+				<td class="loss">NO</td>
+				<td class="win">CLE</td>
+				<td class="loss">NO</td>
+				<td class="win">CLE</td>
+				<td class="win">CLE</td>
+				<td class="loss">NO</td>
+				<td class="loss">NO</td>
+				<td class="win">CLE</td>
+				<td class="loss">NO</td>
+				<td class="win">CLE</td>
+				<td class="win">CLE</td>
+				<td class="win">CLE</td>
+				<td class="win">CLE</td>
+				<td class="win">CLE</td>
+				<td class="loss">NO</td>
+			</tr>
+			<tr>
+				<td class="game">NYJ vs. TEN (+3.5)</td>
+				<td class="push" id="7">NYJ</td>
+				<td class="push">NYJ</td>
+				<td class="push">NYJ</td>
+				<td class="push">TEN</td>
+				<td class="push">TEN</td>
+				<td class="push">NYJ</td>
+				<td class="push">TEN</td>
+				<td class="push">NYJ</td>
+				<td class="push">NYJ</td>
+				<td class="push">NYJ</td>
+				<td class="push">TEN</td>
+				<td class="push">TEN</td>
+				<td class="push">TEN</td>
+				<td class="push">TEN</td>
+				<td class="push">NYJ</td>
+				<td class="push">NYJ</td>
+				<td class="push">TEN</td>
+				<td class="push">TEN</td>
+				<td class="push">TEN</td>
+				<td class="push">NYJ</td>
+			</tr>
+			<tr>
+				<td class="game">PHI vs. HOU (-1.5)</td>
+				<td class="loss" id="8">HOU</td>
+				<td class="loss">HOU</td>
+				<td class="loss">HOU</td>
+				<td class="win">PHI</td>
+				<td class="win">PHI</td>
+				<td class="win">PHI</td>
+				<td class="loss">HOU</td>
+				<td class="loss">HOU</td>
+				<td class="win">PHI</td>
+				<td class="loss">HOU</td>
+				<td class="win">PHI</td>
+				<td class="loss">HOU</td>
+				<td class="win">PHI</td>
+				<td class="loss">HOU</td>
+				<td class="win">PHI</td>
+				<td class="win">PHI</td>
+				<td class="win">PHI</td>
+				<td class="win">PHI</td>
+				<td class="win">PHI</td>
+				<td class="win">PHI</td>
+			</tr>
+			<tr>
+				<td class="game">SEA vs. DET (+4.5)</td>
+				<td class="loss" id="9">SEA</td>
+				<td class="win">DET</td>
+				<td class="loss">SEA</td>
+				<td class="loss">SEA</td>
+				<td class="loss">SEA</td>
+				<td class="loss">SEA</td>
+				<td class="win">DET</td>
+				<td class="win">DET</td>
+				<td class="win">DET</td>
+				<td class="loss">SEA</td>
+				<td class="win">DET</td>
+				<td class="win">DET</td>
+				<td class="loss">SEA</td>
+				<td class="loss">SEA</td>
+				<td class="loss">SEA</td>
+				<td class="loss">SEA</td>
+				<td class="win">DET</td>
+				<td class="loss">SEA</td>
+				<td class="win">DET</td>
+				<td class="win">DET</td>
+			</tr>
+			<tr>
+				<td class="game">CHI vs. GB (-0.5)</td>
+				<td class="win" id="10">CHI</td>
+				<td class="loss">GB</td>
+				<td class="win">CHI</td>
+				<td class="win">CHI</td>
+				<td class="win">CHI</td>
+				<td class="win">CHI</td>
+				<td class="win">CHI</td>
+				<td class="loss">GB</td>
+				<td class="loss">GB</td>
+				<td class="loss">GB</td>
+				<td class="win">CHI</td>
+				<td class="win">CHI</td>
+				<td class="loss">GB</td>
+				<td class="win">CHI</td>
+				<td class="win">CHI</td>
+				<td class="loss">GB</td>
+				<td class="loss">GB</td>
+				<td class="loss">GB</td>
+				<td class="win">CHI</td>
+				<td class="loss">GB</td>
+			</tr>
+			<tr>
+				<td class="game">DAL vs. JAX (-3.5)</td>
+				<td class="loss" id="11">JAX</td>
+				<td class="loss">JAX</td>
+				<td class="win">DAL</td>
+				<td class="loss">JAX</td>
+				<td class="win">DAL</td>
+				<td class="loss">JAX</td>
+				<td class="loss">JAX</td>
+				<td class="win">DAL</td>
+				<td class="loss">JAX</td>
+				<td class="win">DAL</td>
+				<td class="loss">JAX</td>
+				<td class="win">DAL</td>
+				<td class="loss">JAX</td>
+				<td class="win">DAL</td>
+				<td class="win">DAL</td>
+				<td class="loss">JAX</td>
+				<td class="loss">JAX</td>
+				<td class="loss">JAX</td>
+				<td class="win">DAL</td>
+				<td class="win">DAL</td>
+			</tr>
+			<tr>
+				<td class="game">SF vs. ARI (+4.5)</td>
+				<td class="none" id="12">ARI</td>
+				<td class="changeable" id="test1" onDblClick="bg('test1', 'ARI', 'SF', 230, 230, 230)">SF</td>
+				<td class="none">ARI</td>
+				<td class="none">ARI</td>
+				<td class="none">SF</td>
+				<td class="none">SF</td>
+				<td class="none">SF</td>
+				<td class="none">SF</td>
+				<td class="none">SF</td>
+				<td class="none">ARI</td>
+				<td class="none">ARI</td>
+				<td class="none">ARI</td>
+				<td class="none">SF</td>
+				<td class="none">SF</td>
+				<td class="none">ARI</td>
+				<td class="none">SF</td>
+				<td class="none">SF</td>
+				<td class="none">ARI</td>
+				<td class="none">ARI</td>
+				<td class="none">SF</td>
+			</tr>
+			<tr>
+				<td class="game">IND vs. NYG (+3.5)</td>
+				<td class="none" id="13">NYG</td>
+				<td class="changeable" id="test2" onDblClick="bg('test2', 'NYG', 'IND', 230, 230, 230)">IND</td>
+				<td class="none">IND</td>
+				<td class="none">NYG</td>
+				<td class="none">IND</td>
+				<td class="none">NYG</td>
+				<td class="none">NYG</td>
+				<td class="none">IND</td>
+				<td class="none">NYG</td>
+				<td class="changed">NYG</td>
+				<td class="none">IND</td>
+				<td class="none">IND</td>
+				<td class="none">NYG</td>
+				<td class="none">NYG</td>
+				<td class="none">IND</td>
+				<td class="none">NYG</td>
+				<td class="none">NYG</td>
+				<td class="none">NYG</td>
+				<td class="none">NYG</td>
+				<td class="none">IND</td>
+			</tr>
+			<tr>
+				<td class="game">MIN vs. WAS (-2.5)</td>
+				<td class="none" id="14">WAS</td>
+				<td class="changeable" id="test3" onDblClick="bg('test3', 'WAS', 'MIN', 230, 230, 230)">MIN</td>
+				<td class="none">MIN</td>
+				<td class="none">WAS</td>
+				<td class="none">MIN</td>
+				<td class="none">WAS</td>
+				<td class="none">WAS</td>
+				<td class="none">WAS</td>
+				<td class="none">MIN</td>
+				<td class="changed">MIN</td>
+				<td class="none">WAS</td>
+				<td class="none">WAS</td>
+				<td class="none">MIN</td>
+				<td class="none">WAS</td>
+				<td class="none">MIN</td>
+				<td class="none">WAS</td>
+				<td class="none">WAS</td>
+				<td class="none">WAS</td>
+				<td class="none">MIN</td>
+				<td class="none">MIN</td>
+			</tr>
+			<tr id="lastgame">
+				<td class="game">SD vs. OAK (-2.5)</td>
+				<td class="none" id="15">SD</td>
+				<td class="changeable" id="test4" onDblClick="bg('test4', 'OAK', 'SD', 230, 230, 230)">SD</td>
+				<td class="none">SD</td>
+				<td class="none">OAK</td>
+				<td class="none">SD</td>
+				<td class="none">OAK</td>
+				<td class="none">OAK</td>
+				<td class="none">SD</td>
+				<td class="none">OAK</td>
+				<td class="none">SD</td>
+				<td class="none">SD</td>
+				<td class="none">SD</td>
+				<td class="none">SD</td>
+				<td class="none">OAK</td>
+				<td class="none">OAK</td>
+				<td class="none">SD</td>
+				<td class="none">OAK</td>
+				<td class="none">SD</td>
+				<td class="none">OAK</td>
+				<td class="none">OAK</td>
+			</tr>
+			<tr class="weekly">
+				<td class="pctlabel">Weekly</td>
+				<td class="total">0.562</td>
+				<td class="total">0.438</td>
+				<td class="total">0.438</td>
+				<td class="total">0.438</td>
+				<td class="besttotal">0.688</td>
+				<td class="total">0.500</td>
+				<td class="total">0.562</td>
+				<td class="total">0.625</td>
+				<td class="total">0.375</td>
+				<td class="total">0.438</td>
+				<td class="total">0.438</td>
+				<td class="total">0.562</td>
+				<td class="total">0.562</td>
+				<td class="total">0.500</td>
+				<td class="total">0.500</td>
+				<td class="total">0.625</td>
+				<td class="total">0.500</td>
+				<td class="total">0.375</td>
+				<td class="total">0.500</td>
+				<td class="besttotal">0.688</td>
+			</tr>
+			<tr class="cumulative">
+				<td class="pctlabel">Cumulative</td>
+				<td class="besttotal">0.561</td>
+				<td class="total">0.545</td>
+				<td class="total">0.545</td>
+				<td class="total">0.541</td>
+				<td class="total">0.541</td>
+				<td class="total">0.537</td>
+				<td class="total">0.518</td>
+				<td class="total">0.514</td>
+				<td class="total">0.514</td>
+				<td class="total">0.506</td>
+				<td class="total">0.498</td>
+				<td class="total">0.494</td>
+				<td class="total">0.494</td>
+				<td class="total">0.482</td>
+				<td class="total">0.443</td>
+				<td class="total">0.435</td>
+				<td class="total">0.302</td>
+				<td class="total">0.267</td>
+				<td class="total">0.075</td>
+				<td class="total">0.000</td>
+			</tr>
+			<tr class="gamesback">
+				<td class="pctlabel">Games Back</td>
+				<td class="besttotal">--</td>
+				<td class="total">4</td>
+				<td class="total">4</td>
+				<td class="total">5</td>
+				<td class="total">5</td>
+				<td class="total">6</td>
+				<td class="total">11</td>
+				<td class="total">12</td>
+				<td class="total">12</td>
+				<td class="total">14</td>
+				<td class="total">16</td>
+				<td class="total">17</td>
+				<td class="total">17</td>
+				<td class="total">20</td>
+				<td class="total">30</td>
+				<td class="total">32</td>
+				<td class="total">66</td>
+				<td class="total">75</td>
+				<td class="total">124</td>
+				<td class="total">143</td>
+			</tr>
+		</table>
+	</body>
+</html>

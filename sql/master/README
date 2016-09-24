@@ -1,0 +1,8 @@
+000	drop tables
+001	drop views
+002	drop procedures
+100	tables
+101	views
+102	procedures
+200	teams
+2XY	20XY data

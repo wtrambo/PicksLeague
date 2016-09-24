@@ -1,0 +1,19 @@
+{
+	"awayTeam" : {
+		"abbreviation": "NYG",
+		"score": 17
+	},
+	"homeTeam" : {
+		"abbreviation": "DAL",
+		"score": 20
+	},
+        "kickoff" : "Sat Jun 16 2012 22:38:42 GMT-0400 (EST)",
+        "line" : -3.5,
+	"picks" : {
+		"dschexnayder": "NYG",
+		"jeff": "NYG",
+		"jpnance": "DAL"
+	},
+        "season" : 2011,
+        "week" : 1
+}

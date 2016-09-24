@@ -1,0 +1,118 @@
+body {
+	font-family: Verdana;
+	background: #eeeeee;
+	cursor: default;
+}
+
+.user {
+	text-align: center;
+	vertical-align: bottom;
+	font-size: 70%;
+	font-weight: bold;
+	line-height: 105%;
+	background: #CFD4FF;
+	/*background: #CFD4E6;
+	background: #D9DEF0;*/
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+}
+
+.game {
+	text-align: right;
+	font-weight: bold;
+	font-size: 70%;
+	background: #CFD4FF;
+	/*background: #CFD4E6;
+	background: #D9DEF0;*/
+	border-left: 1px solid black;
+}
+
+.push {
+	font-size: 70%;
+	font-style: italic;
+	background: #eaeaea;
+	color: #666666;
+}
+
+.none {
+	font-size: 70%;
+}
+.win {
+	font-size: 70%;
+	font-weight: bold;
+	background: #C1FFBF;
+	color: green;
+}
+.loss {
+	font-size: 70%;
+	background: #FFBFC2;
+	color: darkred;
+}
+
+td {
+	background: white;
+	border-right: 1px solid black;
+	border-bottom: 1px dotted #666666;
+	text-align: center;
+	cursor: pointer;
+}
+
+#lastgame td {
+	border-bottom-style: none;
+}
+
+.week {
+	text-align: center;
+	border-bottom: 1px solid black;
+	background: transparent;
+	line-height: 0.5em;
+}
+
+.week h1 {
+	font-size: 150%;
+}
+
+.week a {
+	font-size: 70%;
+	font-weight: bold;
+	color: blue;
+}
+
+.week a:hover {
+	color: red;
+}
+
+
+.pctlabel {
+	text-align: right;
+	background: #E6ECFF;
+	/*background: #D6ECFF;*/
+	border-left: 1px solid black;
+}
+
+.cumulative td {
+	font-size: 60%;
+}
+
+.weekly td {
+	font-size: 60%;
+	border-top: 1px solid black;
+}
+
+.gamesback td {
+	font-size: 60%;
+	border-bottom: 1px solid black;
+}
+
+.total {
+	letter-spacing: -0.05em;
+	font-weight: bold;
+	background: #E6ECFF;
+	/*background: #D6ECFF;*/
+}
+
+.besttotal {
+	letter-spacing: -0.05em;
+	font-weight: bold;
+	background: #FFFCA3;
+}

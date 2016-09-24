@@ -1,0 +1,3 @@
+DROP PROCEDURE IF EXISTS `update_game`;
+
+DROP PROCEDURE IF EXISTS `update_pick`;

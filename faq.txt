@@ -1,0 +1,250 @@
+Q: Why isn't this a nice HTML page?
+
+A: There's something that I love about the purity of plain old text files. Also,
+   I'm extremely tired of messing with the style sheets. It'll be in a nicer
+   format soon.
+
+--------------------------------------------------------------------------------
+
+Q: Are these really "frequently" asked questions?
+
+A: Okay, you got me. Most of these are just going to be questions which I think
+   you guys probably should be asking but aren't. Hopefully, this page will
+   provide you with some insight as to what can and can not be accomplished in
+   our humble little community.
+
+--------------------------------------------------------------------------------
+
+Q: Why can't I sort the front page by winning percentage?
+
+A: It's coming. I promise.
+
+   The best answer I feel like I can give you has to deal with the overhead
+   involved in first calculating everyone's rank and then displaying all of
+   those picks in a certain order. I know it sounds simple but it's a problem of
+   time-efficiency. If the page takes an extra five seconds to load, that's not
+   a feature worth implementing in my opinion. I really do try to look out for
+   everybody's user experience.
+
+   That said, I think it can actually be done for cheap. I just haven't gotten
+   around to it yet. Be patient.
+
+--------------------------------------------------------------------------------
+
+Q: How are the spreads calculated?
+
+A: Okay. So. I have a program which goes and retrieves the latest version of the
+   NFL odds page provided by covers.com. This page is seriously awesome because
+   it lists start times and current scores and spreads from nine different
+   casinos.
+
+   A game will not have its spread set until we're within 48 hours of it kicking
+   off. Further, a game will not have its spread set until at least five of the
+   nine casinos listed have set a line for it. The actual spread calculation
+   involves averaging all of the real casino lines and rounding to the nearest
+   half-point with whole numbers rounding down (instead of up, as you would
+   probably think).
+
+   Once a game has its spread set on our website, assuming it's a reasonable
+   number, it will not be changed.
+
+--------------------------------------------------------------------------------
+
+Q: What are half-points, anyway?
+
+A: Half-points are, of course, nonexistent in football. Whole-point spreads,
+   however, afford the opportunity for a push. For instance, if the Rams are
+   favored by 4 over the Vikings and the final score has the Rams winning 21-17
+   (on seven field goals by Jeff Wilkins, naturally), the spread has neither
+   been beaten nor covered and the game would typically result in a push.
+
+   Pushes are lame, though. They make every game not count. Part of the fun of
+   this contest is seeing the week 16 and 17 races and for games to result in a
+   push is just horribly anticlimactic. As such, every spread we post will be a
+   half-point spread.
+
+   This is not to say that we have no mechanism for pushing a game should some
+   weird junk happen (for instance, if a portion of Giants Stadium collapses in
+   the second quarter and tons of people are injured and the NFL calls the game
+   to no result). We do.
+
+--------------------------------------------------------------------------------
+
+Q: I want my favorite CFL team's logo. How do I get it?
+
+A: Favorite team logos are earned by winning at least a share of any week during
+   the regular season. If you accomplish this incredibly impressive feat, you'll
+   get an email from me asking which team you want. I've been delinquent making
+   some of the logos in the past but, for the most part, it'll probably be ready
+   to go within a few days of your reply.
+
+   Also, keep this a secret, but I might be working on a message board avatar
+   feature. That's just between you and me, though.
+
+--------------------------------------------------------------------------------
+
+Q: Why are some games colored differently than others?
+
+A: On the big board, a game will be one of two colors. Games which appear
+   consecutively on the big board and share the same color all kick off within
+   fifteen minutes of each other. The motivation for this was chiefly to
+   distinguish the random Thursday and Saturday games that will come around much
+   later in the season. Also, though, at a glance, you can tell which games were
+   "early" and which were "late".
+
+--------------------------------------------------------------------------------
+
+Q: What kind of formatting can I put in my profile/message board post?
+
+A: We support simple BB code. By example:
+
+   Bold            [b]bold text[/b]
+   Underline       [u]underlined text[/u]
+   Italic          [i]italicized text[/i]
+   Strikethrough   [strike]struckthrough text[/strike] 
+   Link (1)        [url http://www.firejoemorgan.com/]Fire Joe Morgan[/url]
+   Link (2)        [url]http://whattheballs.com/~jpnance/trippy-xml.png[/url]
+   Link (3)        [url=http://www.kotaku.com/]Kotaku[/url]
+
+--------------------------------------------------------------------------------
+
+Q: Why don't you put more information on the big board?
+
+A: The answer is space limitation. There's only so much you can put on a page
+   and have it remain visually attractive. A huge thing for me with the big
+   board is avoiding scrollbars. In my ideal world, nobody would ever have to
+   scroll any amount at all on the big board.
+
+   I do recognize that some people have some pretty sweet monitors with high
+   resolutions, though, so I've done my best to help fill their screens up. If
+   you go poke around the preferences page, you can click that "show date/time"
+   checkbox which will darn near double the height of the big board.
+
+--------------------------------------------------------------------------------
+
+Q: How can I find out when a game will be played?
+
+A: Just hold your mouse cursor over it for a second or two and a tooltip should
+   pop up with anything you could possibly want to know.
+
+--------------------------------------------------------------------------------
+
+Q: Why does the site look so god-awful?
+
+A: Unless you're just being mean, you're probably using Internet Explorer 6.
+   Before I describe the problem, I'll give you one of four solutions:
+
+     1. Go into your picks league preferences and switch to the "simple" style.
+        The page will still look like junk but will be far better than the
+        "standard" style.
+     2. Upgrade to IE7. This is probably the most painless.
+     3. Switch to Firefox or Opera or Safari. While you're at it, switch to Mac
+        OS or Linux and help fight the good fight.
+     4. Beg me to make an IE6-supportive style sheet. This really isn't that
+        hard. Not doing it is my personal protest against Internet Explorer.
+
+   The main problem contributing to the absolutely disgusting way the page looks
+   in IE6 (http://www.coinflipper.org/images/ie6-standard.png) is that every
+   cell of every table in the "standard" style uses a transparent PNG image to
+   create the gradient effect. A bug in IE6 prevents it from rendering PNG
+   transparency faithfully and, instead, assigning transparent pixels shades of
+   gray. The bug has been fixed in IE7.
+
+   ..But even if you use IE7, you're still using a browser which is an absolute
+   pain to develop for. There are some CSS properties which IE7 simply has no
+   notion of (max-width) and some Javascript functions which IE7 implements
+   differently than every other browser (Option.add() and remove()) and, come
+   on, it's a Microsoft product and they're evil and all that.
+
+--------------------------------------------------------------------------------
+
+Q: Why don't any of my display settings show up on other computers?
+
+A: Display settings are a browser-dependent thing. Just because you want a huge
+   big board on your laptop doesn't mean you'll want the same look on your work
+   computer. Maybe you have a decidedly low amount of network bandwidth at home
+   and want the "simple" style but enjoy the attractiveness of "standard" when
+   you're at work.
+
+   Now that I write this, though, I'm having second thoughts about this design
+   choice. Consider this an open question and let me know your thoughts.
+
+--------------------------------------------------------------------------------
+
+Q: Why can't I edit my message board posts?
+
+A: Easy. I believe it encourages a higher standard of posting.
+
+   ..And I hate writing stupid "edit post" code because it always comes out so
+   sloppy.
+
+   Seriously, though, I do believe that we're all better without it.
+
+--------------------------------------------------------------------------------
+
+Q: So, uh, how do I make my picks?
+
+A: After you log in, the big board will display (in purple) any games which are
+   not yet locked that week. In order to make a pick, simply click the purple
+   box until the team you're picking shows up. Once the box on the screen turns
+   orange and shows your team, the picks has been made. Seriously, that's all
+   there is to it. Refresh the page if you wanna "be sure" the picks have been
+   made.
+
+--------------------------------------------------------------------------------
+
+Q: How long do I have to make my picks?
+
+A: You can pick a game up until five minutes before its scheduled kickoff. If
+   you wake up four minutes before kickoff and haven't made your pick yet, you
+   can probably just email me and I'll make the pick manually for you. I tend to
+   be nice about that stuff unless the games have started.
+
+--------------------------------------------------------------------------------
+
+Q: When are reminder emails sent out?
+
+A: Reminder emails are sent out at 9am on each day which precedes at least one
+   game. The reminders are sent to whichever email address appears in your
+   preferences. Later, I'll have a separate "reminder email" field so you can,
+   say, re-route the messages to your phone or whatever. For now, though, just
+   the one.
+
+--------------------------------------------------------------------------------
+
+Q: Can you make a "default pick strategy" feature in case I forget a week?
+
+A: This is a question that I've given a lot of thought over the years. I really
+   do my best to be unbiased about it and consider all the viewpoints. So far,
+   though, I've only ever come to one answer:
+
+   Absolutely not.
+
+   Allowing default pick strategies (i.e. "pick every underdog") stands a
+   possibility of rewarding inactivity which is Not Good for the Picks League,
+   in my opinion.
+
+   A follow-up question might be posed: Well, sure, but I can pick every game at
+   the beginning of the season and then never pick again. Isn't that inactivity?
+   What if I win doing that?
+
+   I'd say, yeah, that's inactivity. You got wildly lucky. I don't like that
+   that's how you chose to participate in the league and I think, regardless of
+   what you won, you wasted your entry fee. You also successfully missed a huge
+   portion of The Point which is to encourage all of the players to take an
+   increased interest in the NFL and you wouldn't be invited back the next year
+   if I knew you had done that.
+
+   I'm willing to risk that sort of inactivity, though, because I honestly don't
+   think that it has any chance of happening. No matter how apathetic anybody is
+   towards the NFL, we all feel like we'll do better picking the games ourselves
+   than letting Lady Luck take over.
+
+   Again, this question has got me thinking. Consider it another open question
+   whether future weeks should be pickable at all and tell me your thoughts.
+
+--------------------------------------------------------------------------------
+
+Q: Do we pick the playoffs?
+
+A: Nope.

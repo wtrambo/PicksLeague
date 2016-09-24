@@ -1,0 +1,153 @@
+DROP TABLE IF EXISTS schedules;
+DROP TABLE IF EXISTS picks;
+DROP TABLE IF EXISTS games;
+DROP TABLE IF EXISTS sports;
+DROP TABLE IF EXISTS rankings;
+DROP TABLE IF EXISTS periods;
+DROP TABLE IF EXISTS teams;
+DROP TABLE IF EXISTS entries;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS leagues;
+
+
+
+CREATE TABLE leagues (
+	leagueid SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+	password CHAR(32),
+	fromdate DATETIME NOT NULL,
+	todate DATETIME NOT NULL
+) ENGINE=InnoDB;
+
+
+
+CREATE TABLE users (
+	userid SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	username VARCHAR(30) UNIQUE NOT NULL,
+	password CHAR(32) NOT NULL,
+	email VARCHAR(255) UNIQUE NOT NULL,
+	firstname VARCHAR(30) NOT NULL,
+	lastname VARCHAR(30) NOT NULL
+) ENGINE=InnoDB;
+
+
+
+CREATE TABLE members (
+	leagueid SMALLINT UNSIGNED,
+	userid SMALLINT UNSIGNED,
+	privilege ENUM('A', 'M', 'U') NOT NULL DEFAULT 'U',
+	UNIQUE KEY (leagueid, userid, privilege),
+	FOREIGN KEY (leagueid) REFERENCES leagues(leagueid) ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (userid) REFERENCES users(userid) ON UPDATE CASCADE ON DELETE RESTRICT
+);
+
+
+
+CREATE TABLE entries (
+	entryid SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	leagueid SMALLINT UNSIGNED,
+	userid SMALLINT UNSIGNED,
+	name VARCHAR(30) NOT NULL,
+	INDEX (leagueid),
+	INDEX (userid),
+	UNIQUE KEY (leagueid, userid),
+	FOREIGN KEY (leagueid) REFERENCES leagues(leagueid) ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (userid) REFERENCES users(userid) ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB;
+
+
+
+CREATE TABLE teams (
+	t_id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	t_school VARCHAR(30) UNIQUE,
+	t_mascot VARCHAR(30) NOT NULL
+) ENGINE=InnoDB;
+
+
+
+CREATE TABLE periods (
+	pe_id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	pe_type VARCHAR(30) NOT NULL,
+	pe_identifier VARCHAR(30),
+	pe_from_date DATETIME NOT NULL,
+	pe_to_date DATETIME NOT NULL
+) ENGINE=InnoDB;
+
+
+
+CREATE TABLE rankings (
+	r_id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	r_period_id SMALLINT UNSIGNED,
+	r_team_id SMALLINT UNSIGNED,
+	r_ranking TINYINT UNSIGNED NOT NULL,
+	INDEX (r_period_id),
+	INDEX (r_team_id),
+	FOREIGN KEY (r_period_id) REFERENCES periods(pe_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (r_team_id) REFERENCES teams(t_id) ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB;
+
+
+
+CREATE TABLE sports (
+	sp_abbr VARCHAR(10) NOT NULL PRIMARY KEY,
+	sp_name VARCHAR(255)
+) ENGINE=InnoDB;
+	
+
+
+CREATE TABLE games (
+	g_id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	g_sport_abbr VARCHAR(10) NOT NULL,
+	g_away_team_id SMALLINT UNSIGNED,
+	g_home_team_id SMALLINT UNSIGNED,
+	g_start_time DATETIME NOT NULL,
+	g_spread DECIMAL(3, 1),
+	g_over_under DECIMAL(4, 1),
+	g_away_score TINYINT UNSIGNED NOT NULL,
+	g_home_score TINYINT UNSIGNED NOT NULL,
+	g_game_status TINYINT UNSIGNED NOT NULL,
+	INDEX (g_sport_abbr),
+	INDEX (g_away_team_id),
+	INDEX (g_home_team_id),
+	UNIQUE KEY (g_away_team_id, g_start_time),
+	UNIQUE KEY (g_home_team_id, g_start_time),
+	FOREIGN KEY (g_sport_abbr) REFERENCES sports(sp_abbr) ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (g_away_team_id) REFERENCES teams(t_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (g_home_team_id) REFERENCES teams(t_id) ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB;
+
+
+
+CREATE TABLE picks (
+	pi_id MEDIUMINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	pi_entry_id SMALLINT UNSIGNED,
+	pi_game_id SMALLINT UNSIGNED,
+	pi_team_id SMALLINT UNSIGNED,
+	pi_confidence TINYINT UNSIGNED,
+	pi_from_date DATETIME NOT NULL,
+	pi_to_date DATETIME NOT NULL,
+	INDEX (pi_entry_id),
+	INDEX (pi_game_id),
+	INDEX (pi_team_id),
+	UNIQUE KEY (pi_entry_id, pi_game_id, pi_from_date),
+	FOREIGN KEY (pi_entry_id) REFERENCES entries(e_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (pi_game_id) REFERENCES games(g_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (pi_team_id) REFERENCES teams(t_id) ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB;
+
+
+
+CREATE TABLE schedules (
+	sc_league_id SMALLINT UNSIGNED,
+	sc_game_id SMALLINT UNSIGNED,
+	sc_period_id SMALLINT UNSIGNED,
+	sc_use_confidence BOOLEAN NOT NULL,
+	sc_bet_type TINYINT UNSIGNED NOT NULL,
+	INDEX (sc_league_id),
+	INDEX (sc_game_id),
+	INDEX (sc_period_id),
+	UNIQUE KEY (sc_league_id, sc_game_id, sc_period_id, sc_use_confidence, sc_bet_type),
+	FOREIGN KEY (sc_league_id) REFERENCES leagues(l_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (sc_game_id) REFERENCES games(g_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (sc_period_id) REFERENCES periods(pe_id) ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB;

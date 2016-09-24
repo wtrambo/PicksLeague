@@ -1,0 +1,78 @@
+body {
+	font-family: helvetica;
+}
+
+
+.weeks {
+	border-collapse: collapse;
+	float: left;
+	font-size: 80%;
+	margin-right: 4px;
+	margin-top: 28px;
+}
+
+.weeks td {
+	padding: 8px;
+	text-align: right;
+}
+
+
+.games {
+	border-collapse: collapse;
+	float: left;
+	font-size: 80%;
+	margin-top: 28px;
+}
+
+.games td {
+	border: 1px solid white;
+	max-height: 42px;
+	line-height: 1.1;
+	padding: 6px;
+	vertical-align: middle;
+}
+
+
+.picks {
+	border-collapse: collapse;
+	float: left;
+	font-size: 80%;
+	width: 100px;
+}
+
+.picks td.name {
+	border-bottom: 1px solid black;
+	font-size: 130%;
+	font-weight: bold;
+	height: 28px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.picks td.pick {
+	border-bottom: 1px dotted black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-top: 1px dotted black;
+	font-size: 220%;
+	font-weight: bold;
+	letter-spacing: -2px;
+	max-height: 42px;
+	padding: 6px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.picks td.total {
+	border-top: 1px solid black;
+	font-size: 130%;
+	font-weight: bold;
+	height: 28px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+.break {
+	margin-right: 20px;
+}

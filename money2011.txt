@@ -1,0 +1,28 @@
+Anthony	150 15 + 5 +
+Alok	82.50
+Luke	82.50
+Nam	42.50 5 + 10 +
+Erica	42.50
+Zak	20
+Trevor	15
+Rob	5 10 +
+Brett	5
+Patrick	5
+
+1	$15	-
+2	$20	Zak
+3	$5	Rob
+4	$5	Nam
+5	$5	Brett
+6	$5	-
+7	$10	-
+8	$15	Trevor
+9	$5	-
+10	$10	-
+11	$15	Anthony
+12	$5	-
+13	$10	Rob
+14	$5	-
+15	$10	Nam
+16	$5	Patrick
+17	$5	Anthony

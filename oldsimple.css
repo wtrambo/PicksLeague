@@ -1,0 +1,600 @@
+/* general definitions */
+
+body {
+	font-family: Verdana;
+	cursor: default;
+	background-color: #dddddd;
+}
+
+a {
+	color: blue;
+	cursor: pointer;
+}
+
+a:hover {
+	color: red;
+}
+
+h1 {
+	font-size: 28pt;
+	letter-spacing: -2pt;
+}
+
+.error {
+	font-weight: bold;
+	color: rgb(255, 0, 0);
+	letter-spacing: -1px;
+}
+
+.saved {
+	font-weight: bold;
+	font-size: 75%;
+	color: green;
+}
+
+
+
+/* stuff at the top of the page */
+#header {
+}
+
+#header #left {
+}
+
+#header #center {
+}
+
+#header #right {
+	vertical-align: top;
+}
+
+#header input {
+	font-family: Verdana;
+	font-size: 60%;
+	border: 1px solid black;
+	padding: 2px;
+	margin-bottom: 2px;
+}
+
+#header label {
+	font-size: 60%;
+}
+
+#header #username,
+#header #password {
+	background-image: none;
+	background-color: white;
+}
+
+#header #login,
+#header #logout {
+	background-color: rgb(170, 170, 170);
+}
+
+#header #currentTime {
+	font-size: 80%;
+	text-align: right;
+}
+
+#header #links {
+	font-size: 80%;
+	text-align: right;
+}
+
+#header #links .currentPage {
+	font-weight: bold;
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+
+
+
+#bigboard {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+#bigboard td {
+	background: white;
+	border-right: 1px solid black;
+	border-top: 1px dotted black;
+	text-align: center;
+}
+
+#bigboard .week {
+	text-align: center;
+	background: transparent;
+	border-bottom: 1px solid black;
+	border-top: none;
+}
+
+#bigboard .week #weekSelect {
+	text-align: center;
+	font-weight: bold;
+	background-color: rgb(230, 230, 230);
+	border: 1px solid black;
+	font-size: 130%;
+}
+
+#bigboard .week a {
+	font-size: 70%;
+	font-weight: bold;
+}
+
+#bigboard .user {
+	text-align: center;
+	vertical-align: bottom;
+	text-transform: uppercase;
+	/*font-family: Bitstream Vera Sans Mono;*/
+	font-family: Lucida Console;
+	font-weight: bold;
+	font-size: 85%;
+	line-height: 80%;
+	/*background: url("images/user.png");*/
+	background-color: rgb(207, 212, 255);
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	min-height: 90px;
+	cursor: pointer;
+}
+
+#bigboard .game {
+	text-align: right;
+	/*background-color: rgb(154, 164, 255);*/
+	background-color: rgb(125, 125, 240);
+	border-left: 1px solid black;
+	white-space: nowrap;
+	line-height: 11px;
+}
+
+#bigboard .gameTop {
+	border-top: none;
+}
+
+#bigboard .gameFirst {
+	border-top: 1px solid black;
+}
+
+#bigboard #gameColor0 {
+	background-color: rgb(140, 150, 255);
+}
+
+#bigboard #gameColor1 {
+	background-color: rgb(160, 220, 255);
+}
+
+#bigboard #gameColor2 {
+	background-color: rgb(125, 125, 0);
+}
+
+#bigboard #gameColor3 {
+	background-color: rgb(125, 0, 200);
+}
+
+#bigboard #gameColor4 {
+	background-color: rgb(0, 125, 200);
+}
+
+#bigboard #gameColor5 {
+	background-color: rgb(225, 0, 125);
+}
+
+#bigboard #gameColor6 {
+	background-color: rgb(0, 100, 225);
+}
+
+#bigboard #gameColor7 {
+	background-color: rgb(100, 255, 100);
+}
+
+#bigboard .game .gameText {
+	font-weight: bold;
+	font-size: 70%;
+}
+
+#bigboard .game .gameDate {
+	font-size: 60%;
+}
+
+#bigboard .push {
+	font-size: 70%;
+	font-style: italic;
+	background-color: rgb(170, 170, 170);
+	color: #666666;
+	letter-spacing: -1px;
+}
+
+#bigboard .none {
+	font-size: 70%;
+	background-color: rgb(230, 230, 230);
+	letter-spacing: -1px;
+}
+
+#bigboard .win {
+	font-size: 80%;
+	font-weight: bold;
+	background-color: rgb(142, 232, 139);
+	/*background-color: rgb(125, 255, 125);*/
+	color: green;
+	letter-spacing: -1px;
+}
+
+#bigboard .loss {
+	font-size: 80%;
+	background-color: rgb(255, 149, 153);
+	/*background-color: rgb(240, 110, 110);*/
+	color: darkred;
+	letter-spacing: -1px;
+}
+
+#bigboard .changeable {
+	font-size: 70%;
+	background-color: rgb(210, 180, 210);
+	cursor: pointer;
+	letter-spacing: -1px;
+}
+
+#bigboard .changed {
+	font-size: 70%;
+	background-color: rgb(250, 197, 71);
+	color: #CC7722;
+	cursor: pointer;
+	letter-spacing: -1px;
+}
+
+#bigboard #lastgame td {
+	border-bottom-style: none;
+}
+
+#bigboard .pctlabel {
+	text-align: right;
+	border-left: 1px solid black;
+	background-color: rgb(202, 214, 253);
+}
+
+#bigboard .weekly td {
+	font-size: 70%;
+	border-top: 1px solid black;
+}
+
+#bigboard .cumulative td {
+	font-size: 70%;
+}
+
+#bigboard .gamesback td {
+	font-size: 70%;
+	border-bottom: 1px solid black;
+}
+
+#bigboard .total {
+	letter-spacing: -0.05em;
+	font-weight: bold;
+	background-color: rgb(202, 214, 253);
+	letter-spacing: -1px;
+}
+
+#bigboard .besttotal {
+	letter-spacing: -0.05em;
+	font-weight: bold;
+	background-color: rgb(255, 218, 81);
+	letter-spacing: -1px;
+}
+
+
+
+/* team logos */
+
+/*
+#bigboard .aggies {
+	background-image: url("logos/aggies.png");
+}
+
+#bigboard .buckeyes {
+	background-image: url("logos/buckeyes.png");
+}
+
+#bigboard .colt45s {
+	background-image: url("logos/colt45s.png");
+}
+
+#bigboard .crusaders {
+	background-image: url("logos/crusaders.png");
+}
+
+#bigboard .longhorns {
+	background-image: url("logos/longhorns.png");
+}
+
+#bigboard .nittanylions {
+	background-image: url("logos/nittanylions.png");
+}
+
+#bigboard .penguins {
+	background-image: url("logos/penguins.png");
+}
+
+#bigboard .realmadrid {
+	background-image: url("logos/realmadrid.png");
+}
+
+#bigboard .redsox {
+	background-image: url("logos/redsox.png");
+}
+
+#bigboard .redstockings {
+	background-image: url("logos/redstockings.png");
+}
+
+#bigboard .stars {
+	background-image: url("logos/stars.png");
+}
+
+#bigboard .wranglers {
+	background-image: url("logos/wranglers.png");
+}
+
+#bigboard .yankees {
+	background-image: url("logos/yankees.png");
+}
+
+#bigboard .astros {
+	background-image: url("logos/astros.png");
+}
+
+#bigboard .niners {
+	background-image: url("logos/niners.png");
+}
+
+#bigboard .bears {
+	background-image: url("logos/bears.png");
+}
+
+#bigboard .bengals {
+	background-image: url("logos/bengals.png");
+}
+
+#bigboard .bills {
+	background-image: url("logos/bills.png");
+}
+
+#bigboard .broncos {
+	background-image: url("logos/broncos.png");
+}
+
+#bigboard .browns {
+	background-image: url("logos/browns.png");
+}
+
+#bigboard .buccaneers {
+	background-image: url("logos/buccaneers.png");
+}
+
+#bigboard .cardinals {
+	background-image: url("logos/cardinals.png");
+}
+
+#bigboard .chargers {
+	background-image: url("logos/chargers.png");
+}
+
+#bigboard .chiefs {
+	background-image: url("logos/chiefs.png");
+}
+
+#bigboard .colts {
+	background-image: url("logos/colts.png");
+}
+
+#bigboard .cowboys {
+	background-image: url("logos/cowboys.png");
+}
+
+#bigboard .dolphins {
+	background-image: url("logos/dolphins.png");
+}
+
+#bigboard .eagles {
+	background-image: url("logos/eagles.png");
+}
+
+#bigboard .falcons {
+	background-image: url("logos/falcons.png");
+}
+
+#bigboard .giants {
+	background-image: url("logos/giants.png");
+}
+
+#bigboard .jaguars {
+	background-image: url("logos/jaguars.png");
+}
+
+#bigboard .jets {
+	background-image: url("logos/jets.png");
+}
+
+#bigboard .lions {
+	background-image: url("logos/lions.png");
+}
+
+#bigboard .longhorns {
+	background-image: url("logos/longhorns.png");
+}
+
+#bigboard .oilers {
+	background-image: url("logos/oilers.png");
+}
+
+#bigboard .packers {
+	background-image: url("logos/packers.png");
+}
+
+#bigboard .panthers {
+	background-image: url("logos/panthers.png");
+}
+
+#bigboard .patriots {
+	background-image: url("logos/patriots.png");
+}
+
+#bigboard .raiders {
+	background-image: url("logos/raiders.png");
+}
+
+#bigboard .rams {
+	background-image: url("logos/rams.png");
+}
+
+#bigboard .ravens {
+	background-image: url("logos/ravens.png");
+}
+
+#bigboard .redskins {
+	background-image: url("logos/redskins.png");
+}
+
+#bigboard .saints {
+	background-image: url("logos/saints.png");
+}
+
+#bigboard .seahawks {
+	background-image: url("logos/seahawks.png");
+}
+
+#bigboard .steelers {
+	background-image: url("logos/steelers.png");
+}
+
+#bigboard .texans {
+	background-image: url("logos/texans.png");
+}
+
+#bigboard .titans {
+	background-image: url("logos/titans.png");
+}
+
+#bigboard .vikings {
+	background-image: url("logos/vikings.png");
+}
+
+
+
+/* stuff for other parts of the site */
+
+.fancyTable {
+	border: 1px solid black;
+}
+
+.fancyTable td {
+	padding: 10px;
+	background-image: url("images/bg.png");
+	background-repeat: repeat-x;
+}
+
+.fancyTable .field {
+	text-align: right;
+	font-weight: bold;
+	white-space: nowrap;
+	border-right: 1px solid black;
+	/*background-color: rgb(103, 142, 171);*/
+	background-image: url("images/bg.png");
+	background-color: rgb(142, 174, 198);
+	background-repeat: repeat-x;
+	vertical-align: top;
+}
+
+.fancyTable .value {
+	text-align: left;
+	background-image: url("images/bg.png");
+	background-color: rgb(230, 230, 230);
+	background-repeat: repeat-x;
+}
+
+.fancyTable input,
+.fancyTable textarea,
+.fancyTable select {
+	border: 1px solid black;
+	font-family: Verdana;
+	font-size: 80%;
+}
+
+.fancyTable input,
+.fancyTable textarea {
+	padding: 2px;
+}
+
+.fancyTable .value .phone {
+	text-align: center;
+}
+
+.fancyTable #submit {
+	background-image: url("images/bg.png");
+	background-color: rgb(170, 170, 170);
+	background-repeat: repeat-x;
+}
+
+
+.verticalTable {
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+}
+
+.verticalTable td {
+        padding: 10px;
+        background-image: url("images/bg.png");
+        background-repeat: repeat-x;
+}
+
+.verticalTable .field {
+        text-align: center;
+        font-weight: bold;
+        white-space: nowrap;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        /*background-color: rgb(103, 142, 171);*/
+        background-image: url("images/bg.png");
+        background-color: rgb(142, 174, 198);
+        background-repeat: repeat-x;
+        vertical-align:top;
+}
+
+.verticalTable .lastColumn {
+        border-right: none;
+}
+
+.verticalTable .value {
+        text-align: left;
+        background-image: url("images/bg.png");
+        background-color: rgb(230, 230, 230);
+        background-repeat: repeat-x;
+	border-right: 1px solid black;
+}
+
+.verticalTable input,
+.verticalTable textarea,
+.verticalTable select {
+        border: 1px solid black;
+        font-family: Verdana;
+        font-size: 80%;
+}
+
+.verticalTable input,
+.verticalTable textarea {
+        padding: 2px;
+}
+
+.verticalTable .value .phone {
+        text-align: center;
+}
+
+.verticalTable #submit {
+        background-image: url("images/bg.png");
+        background-color: rgb(170, 170, 170);
+        background-repeat: repeat-x;
+}
+
+.clickable {
+	cursor: pointer;
+}

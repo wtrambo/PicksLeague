@@ -1,0 +1,41 @@
+1 professional payout system -- google checkout
+2 themes / skins
+3 enlarged feature set
+ A splits page, team wins vs. spread, team total points vs. spread
+   home teams, away teams, league PLAYERS vs. spreads
+ B side bets
+4 user registration system
+5 mulitple leagues
+ A vs. spread
+ B straight up
+ C confidence
+6 beyond NFL
+7 command line versions for Trevor
+8 live projected game result
+9 different bigBoard viewing types
+  in the boxes, show the spread and the result
+10 user customizable sorting options,
+   such as the ability to drag players around for custom sorts
+11 rather than requesting money from players, players request
+   the right to be included in a league and pay up front
+12 drop down menu for making queries or a publicly released
+   API for making database queries, similar to mail filtering
+13 full featured message board
+14 page for making picks which includes relevant information
+  A injuries
+  B weather forecast
+  C splits
+15 can we poll game logs for more detailed game information
+16 more mouseovers, I can think of more information to put there
+17 maybe show last message board post on the big board
+18 automatic spread generation, using a pre-declared
+   and public formula. this solves timeliness and subjectivity
+19 pushes -- these might be required if you're standardizing
+   a formula. Jeff disagrees
+20 we need a scores polling system that does not utilize NFL.com,
+   may have found a suitable XML feed
+21 web based administration
+22 code repository
+23 wider user base
+24 can we turn this into a successful business which would be
+   worth money to a fantasy site
