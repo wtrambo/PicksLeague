@@ -1,9 +1,9 @@
 <?php
 
-	include("config.php");
-	include("connect.php");
-	include("misc.php");
-	include("getweek.php");
+	include(realpath(__DIR__ . '/../') . '/config.php');
+	include(realpath(__DIR__ . '/../') . '/connect.php');
+	include(realpath(__DIR__ . '/../') . '/misc.php');
+	include(realpath(__DIR__ . '/../') . '/getweek.php');
 
 	date_default_timezone_set("US/Eastern");
 
