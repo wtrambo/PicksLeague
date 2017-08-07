@@ -61,8 +61,8 @@
 				continue;
 			}
 
-			$week = getweek(strtotime($date . " " . $season));
-			$query = "CALL update_game('" . $homeTeam . "', '" . $awayTeam . "', " . $season . ", " . $week . ", '" . $startTimeUtc . "', NULL, NULL, " . $spread .");";
+			$week = getweek(strtotime($date . " " . ($season + (preg_match('/Jan/', $date) ? 1 : 0))));
+			$query = "CALL update_game('" . $homeTeam . "', '" . $awayTeam . "', " . $season . ", " . $week . ", NULL, NULL, NULL, " . $spread .");";
 
 			if ($query != "NULL") {
 				echo $query . "\n";

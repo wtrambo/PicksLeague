@@ -35,8 +35,8 @@
 -->
 							<a href="http://www.vegasinsider.com/nfl/odds/las-vegas/">Live Odds</a> | 
 							<a<? if (strpos($currentPage, "messageboard.php")) { ?> class="currentPage"<? } ?> href="messageboard.php">Message Board</a> | 
-							<a href="blog.txt">Blog</a> |
-							<a href="faq.txt">FAQ</a> |
+							<!--<a href="blog.txt">Blog</a> |
+							<a href="faq.txt">FAQ</a> |-->
 							<a<? if (strpos($currentPage, "preferences.php")) { ?> class="currentPage"<? } ?> href="preferences.php">Preferences</a>
 						</div>
 					</td>
