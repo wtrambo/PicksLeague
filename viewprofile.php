@@ -21,9 +21,9 @@
                  "FROM   pl_users " .
                  "WHERE  nick_name = '" . $_GET['nick_name'] . "' " .
 		 "AND season = " . $season;
-        $results = mysql_query($query) or die(mysql_error());
+        $results = mysqli_query($link, $query) or die(mysqli_error($link));
 
-        if ($row = mysql_fetch_assoc($results)) {
+        if ($row = mysqli_fetch_assoc($results)) {
                 echo "\t\t<h1>" . $row['first_name'] . " " . $row['last_name'] . "</h1>\n";
                 echo "\t\t<table class=\"fancyTable\" cellspacing=\"0\">\n";
 

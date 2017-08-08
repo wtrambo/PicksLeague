@@ -32,7 +32,7 @@
 		$query = "CALL update_game('" . $homeTeam . "', '" . $awayTeam . "', " . $season . ", " . $week . ", NULL, " . $homeScore . ", " . $awayScore . ", NULL);";
 
 		if ($argc > 1 && $argv[1] == 'update') {
-			mysql_query($query);
+			mysqli_query($link, $query);
 		}
 		else {
 			echo $query . "\n"; 

@@ -68,7 +68,7 @@
 				echo $query . "\n";
 
 				if (($argc > 1) && ($argv[1] == "update")) {
-					mysql_query($query);
+					mysqli_query($link, $query);
 				}
 			}
 		}

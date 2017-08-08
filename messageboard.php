@@ -6,8 +6,8 @@
 	include("timezone.php");
 	include("style.php");
 
-	$result = mysql_query("SELECT COUNT(*) FROM pl_messages WHERE season = " . $season);
-	$row = mysql_fetch_row($result);
+	$result = mysqli_query($link, "SELECT COUNT(*) FROM pl_messages WHERE season = " . $season);
+	$row = mysqli_fetch_row($result);
 	$maxpage = ceil($row[0] / 20);
 	$pagerange = 4;
 
@@ -64,17 +64,17 @@
 		"ORDER  BY message_id DESC ".
 		"LIMIT  " . (($maxpage - $page) * 20) . ", 20";
 	
-	$result = mysql_query($query) or die(mysql_error());
+	$result = mysqli_query($link, $query) or die(mysqli_error($link));
 ?>
 		<div class="messageContainer">
 			<table cellspacing="0" cellpadding="4" width="100%">
 <?php
 	$top = true;
-	while ($row = mysql_fetch_assoc($result)) {
+	while ($row = mysqli_fetch_assoc($result)) {
 		$row['message'] = cleanText($row['message']);
 
 ?>
-				<tr class="messageHeader<?phpif ($top) { echo " top"; $top = false; } ?>">
+				<tr class="messageHeader<?php if ($top) { echo " top"; $top = false; } ?>">
 					<td class="messageLeft" width="20%">
 						<div class="messageUser" onclick="viewProfile('<?= $row['nick_name'] ?>')"><?= $row['nick_name'] ?></div>
 						<div class="messageDate"><?= date("F j, Y", strtotime($row['time'] . " UTC")) ?><br /><?= date("g:ia", strtotime($row['time'] . " UTC")) ?></div>

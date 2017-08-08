@@ -66,9 +66,9 @@ ob_start();
 		" WHERE season = " . $season .
 		" ORDER BY display_rank";
 
-	$users_result = mysql_query($users_query) or die(mysql_error());
+	$users_result = mysqli_query($link, $users_query) or die(mysqli_error($link));
 
-	while ($user_row = mysql_fetch_assoc($users_result)) {
+	while ($user_row = mysqli_fetch_assoc($users_result)) {
 		$self = '';
 
 		if (isset($_SESSION['username']) && $user_row['user_name'] == $_SESSION['username']) {
@@ -86,13 +86,13 @@ ob_start();
 	// create a row for each of the games for the current season for the requested week
 
 	$games_query = "SELECT * FROM pl_games WHERE season = " . $season . " AND week = " . $week . " ORDER BY start_time ASC, away_team ASC";
-	$games_result = mysql_query($games_query) or die(mysql_error());
+	$games_result = mysqli_query($link, $games_query) or die(mysqli_error($link));
 
 	// these are used for grouping the games time-wise
 	$prev_timestamp = 0;
 	$group = 1; // initially 1 due to "toggle-first" mechanic
 
-	for ($i = 0; $game_row = mysql_fetch_assoc($games_result); $i++) {
+	for ($i = 0; $game_row = mysqli_fetch_assoc($games_result); $i++) {
 		// copy all of the fetched columns
 		$home_team = $game_row['home_team'];
 		$away_team = $game_row['away_team'];
@@ -191,9 +191,9 @@ ob_start();
 			ORDER BY
 				display_rank
 		";
-		$picks_result = mysql_query($picks_query) or die(mysql_error());
+		$picks_result = mysqli_query($link, $picks_query) or die(mysqli_error($link));
 
-		while ($pick_row = mysql_fetch_assoc($picks_result)) {
+		while ($pick_row = mysqli_fetch_assoc($picks_result)) {
 			if ($pick_row['pick'] != "") {
 				$pick = $pick_row['pick'];
 			}
@@ -249,7 +249,7 @@ ob_start();
 		WHERE season = " . $season . " AND week = " . $week . "
 		ORDER BY display_rank ASC
 	";
-	$week_wins_result = mysql_query($week_wins_query) or die(mysql_error());
+	$week_wins_result = mysqli_query($link, $week_wins_query) or die(mysqli_error($link));
 
 
 	// fetch everybody's win-loss record from the start of the season up through the selected week
@@ -260,7 +260,7 @@ ob_start();
 		GROUP BY user_name
 		ORDER BY display_rank ASC
 	";
-	$total_result = mysql_query($total_query) or die(mysql_error());
+	$total_result = mysqli_query($link, $total_query) or die(mysqli_error($link));
 
 
 	// store everything into an array with a row for each user
@@ -271,7 +271,7 @@ ob_start();
 	$max_total_wins = 0;
 	$max_total_losses = 0;
 
-	for ($i = 0; $week_wins_row = mysql_fetch_assoc($week_wins_result); $i++) {
+	for ($i = 0; $week_wins_row = mysqli_fetch_assoc($week_wins_result); $i++) {
 		$week_wins = $week_wins_row['wins'];
 
 		if ($week_wins > $max_week_wins) {
@@ -282,7 +282,7 @@ ob_start();
 		array_push($win_data[$i], $week_wins);
 	}
 
-	for ($i = 0; $total_row = mysql_fetch_assoc($total_result); $i++) {
+	for ($i = 0; $total_row = mysqli_fetch_assoc($total_result); $i++) {
 		array_push($users, $total_row['user_name']);
 		$total_wins = $total_row['wins'];
 		$total_losses = $total_row['losses'];

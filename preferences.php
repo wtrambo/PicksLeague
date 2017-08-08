@@ -11,13 +11,13 @@
 	$showdate = $_COOKIE['showdate'];
 
 	if ($_POST['submit']) {
-		$password1 = mysql_real_escape_string($_POST['password1']);
-		$password2 = mysql_real_escape_string($_POST['password2']);
-		$timezone = mysql_real_escape_string($_POST['timezone']);
-		$email = mysql_real_escape_string($_POST['email']);
-		$favoriteTeam = mysql_real_escape_string($_POST['favoriteTeam']);
-		$phone = mysql_real_escape_string($_POST['areacode']) . mysql_real_escape_string($_POST['prefix']) . mysql_real_escape_string($_POST['suffix']);
-		$profile = mysql_real_escape_string($_POST['profile']);
+		$password1 = mysqli_real_escape_string($link, $_POST['password1']);
+		$password2 = mysqli_real_escape_string($link, $_POST['password2']);
+		$timezone = mysqli_real_escape_string($link, $_POST['timezone']);
+		$email = mysqli_real_escape_string($link, $_POST['email']);
+		$favoriteTeam = mysqli_real_escape_string($link, $_POST['favoriteTeam']);
+		$phone = mysqli_real_escape_string($link, $_POST['areacode']) . mysqli_real_escape_string($link, $_POST['prefix']) . mysqli_real_escape_string($link, $_POST['suffix']);
+		$profile = mysqli_real_escape_string($link, $_POST['profile']);
 /*
 		$profile = str_replace("<", "&lt;", $profile);
 		$profile = str_replace(">", "&gt;", $profile);
@@ -59,7 +59,7 @@
 				" AND season = " . $season;
 		}
 
-		$result = mysql_query($query) or die(mysql_error());
+		$result = mysqli_query($link, $query) or die(mysqli_error($link));
 
 		setcookie("timezone", $timezone, $cookieExpirationTime);
 
@@ -94,9 +94,9 @@
 		"SELECT user_name, first_name, last_name, nick_name, location, timezone, email, phone, favorite_team, profile" .
 		"  FROM pl_users" .
 		" WHERE user_name = '" . $_SESSION['username'] . "' AND season = " . $season;
-	$result = mysql_query($query) or die(mysql_error());
+	$result = mysqli_query($link, $query) or die(mysqli_error($link));
 
-	if ($row = mysql_fetch_assoc($result)) {
+	if ($row = mysqli_fetch_assoc($result)) {
 		$username = $row['user_name'];
 
 		if (($row['nick_name'] != $row['first_name']) && ($row['nick_name'] != $row['last_name'])) {

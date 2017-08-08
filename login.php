@@ -19,9 +19,9 @@
 	else if ($_POST['username']) {
 		$_POST['username'] = trim($_POST['username'], "'");
 		$query = "SELECT user_name, password, nick_name, timezone, privilege FROM pl_users WHERE user_name = '" . $_POST['username'] . "' AND password = MD5('" . $_POST['password'] . "') AND season = " . $season;
-		$result = mysql_query($query) or die(mysql_error());
+		$result = mysqli_query($link, $query) or die(mysqli_error($link));
 
-		if ($row = mysql_fetch_assoc($result)) {
+		if ($row = mysqli_fetch_assoc($result)) {
 			$_SESSION['username'] = $row['user_name'];
 			$_SESSION['password'] = $row['password'];
 			$_SESSION['nickname'] = $row['nick_name'];

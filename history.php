@@ -1,5 +1,5 @@
 			<div class="messageHistory">
-<?
+<?php
 	if ($page != $maxpage) {
 		echo "\t\t\t\t<a href=\"" . $_SERVER['PHP_SELF'] . "?page=" . $maxpage . "\">&laquo;</a>\n";
 		echo "\t\t\t\t<a href=\"" . $_SERVER['PHP_SELF'] . "?page=" . ($page + 1) . "\">&lsaquo;</a>\n";

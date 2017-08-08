@@ -16,8 +16,8 @@
 	$query;
 
 	$query = "SELECT start_time FROM pl_games WHERE home_team = '" . $homeTeam . "' AND away_team = '" . $awayTeam . "' AND season = " . $season . " AND week = " . $week;
-	$result = mysql_query($query);
-	$row = mysql_fetch_assoc($result);
+	$result = mysqli_query($link, $query);
+	$row = mysqli_fetch_assoc($result);
 
 	//$currentTime = strtotime($row['start_time']);
 
@@ -30,7 +30,7 @@
 
 	$query = "CALL update_pick('" . $userName . "', '" . $homeTeam . "', '" . $awayTeam . "', " . $season . ", " . $week . ", '" . $pick . "', NULL)";
 
-	mysql_query($query) or die(mysql_error());
-	mysql_close();
+	mysqli_query($link, $query) or die(mysqli_error($link));
+	mysqli_close();
 	echo "success";
 ?>
