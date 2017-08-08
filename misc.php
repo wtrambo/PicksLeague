@@ -1,6 +1,6 @@
 <?php
 	$season = 2016;
-	$cookieExpirationTime = strtotime("January 31, 2017");
+	$cookieExpirationTime = strtotime("January 31, 2018");
 
 	$teamsarray = Array(
 		'Arizona'	=> 'ARI',	'ARI'	=> 'Arizona',

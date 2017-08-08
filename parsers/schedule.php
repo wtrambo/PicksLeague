@@ -63,7 +63,7 @@
 						$debug[$awayteam]++;
 
 						if (($argc > 1) && ($argv[1] == "update")) {
-						//	mysqli_query($link, $query) or die("Something's wrong.");
+							mysqli_query($link, $query) or die("Something's wrong.");
 						}
 					}
 				}

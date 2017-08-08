@@ -20,7 +20,8 @@
 			//$diff = $time - mktime(0,0,0,9,4,2013);
 			//$diff = $time - mktime(0,0,0,9,3,2014);
 			//$diff = $time - mktime(0,0,0,9,9,2015);
-			$diff = $time - mktime(0,0,0,9,7,2016);
+			//$diff = $time - mktime(0,0,0,9,7,2016);
+			$diff = $time - mktime(0,0,0,9,6,2017);
 
 			// How many days we've gone since the start
 			$days = intval($diff / 86400);
