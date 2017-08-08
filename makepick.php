@@ -31,6 +31,6 @@
 	$query = "CALL update_pick('" . $userName . "', '" . $homeTeam . "', '" . $awayTeam . "', " . $season . ", " . $week . ", '" . $pick . "', NULL)";
 
 	mysqli_query($link, $query) or die(mysqli_error($link));
-	mysqli_close();
+	mysqli_close($link);
 	echo "success";
 ?>
