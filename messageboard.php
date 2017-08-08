@@ -1,4 +1,4 @@
-<?
+<?php
 	session_start();
 	include("config.php");
 	include("connect.php");
@@ -28,9 +28,9 @@
 	</head>
 
 	<body>
-<?  include("header.php"); ?>
+<?php include("header.php"); ?>
 		<h1>Message Board</h1>
-<? if ($_SESSION['username']) { ?>
+<?php if ($_SESSION['username']) { ?>
 		<p />
 
 		<input id="submit" type="button" onclick="toggleVisibility(document.getElementById('postmessage')); toggleVisibility(document.getElementById('submit')); document.getElementById('message').focus();" value="Post Message" />
@@ -49,11 +49,11 @@
 			</table>
 		</form>
 
-<?
+<?php
 	include("history.php");
 ?>
 
-<?
+<?php
 	$query =
 		"SELECT nick_name, time, message ".
 		"FROM   pl_users u ".
@@ -68,13 +68,13 @@
 ?>
 		<div class="messageContainer">
 			<table cellspacing="0" cellpadding="4" width="100%">
-<?
+<?php
 	$top = true;
 	while ($row = mysql_fetch_assoc($result)) {
 		$row['message'] = cleanText($row['message']);
 
 ?>
-				<tr class="messageHeader<? if ($top) { echo " top"; $top = false; } ?>">
+				<tr class="messageHeader<?phpif ($top) { echo " top"; $top = false; } ?>">
 					<td class="messageLeft" width="20%">
 						<div class="messageUser" onclick="viewProfile('<?= $row['nick_name'] ?>')"><?= $row['nick_name'] ?></div>
 						<div class="messageDate"><?= date("F j, Y", strtotime($row['time'] . " UTC")) ?><br /><?= date("g:ia", strtotime($row['time'] . " UTC")) ?></div>
@@ -83,16 +83,16 @@
 						<div class="messageText"><?= $row['message'] ?></div>
 					</td>
 				</tr>
-<?
+<?php
 	}
 ?>
 			</table>
 		</div>
-<?
+<?php
 	include("history.php");
 ?>
-<? } else { ?>
+<?php } else { ?>
 		<h3 class="error">You need to be logged in to use this part of the website.</h3>
-<? } ?>
+<?php } ?>
 	</body>
 </html>

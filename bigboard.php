@@ -1,4 +1,4 @@
-<?
+<?php
 $time = microtime();
 $time = explode(" ", $time);
 $time = $time[1] + $time[0];
@@ -21,7 +21,7 @@ ob_start();
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-		<title><? if ($week != 0) { ?>Week <?= $week ?><? } else { ?>Preseason<? } ?> &laquo; The Picks League &laquo; Coinflipper</title>
+		<title><?php if ($week != 0) { ?>Week <?= $week ?><?php } else { ?>Preseason<?php } ?> &laquo; The Picks League &laquo; Coinflipper</title>
 		<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="<?= $style ?>.css" />
 		<script type="text/javascript" src="misc.js"></script>
@@ -29,7 +29,7 @@ ob_start();
 	</head>
 
 	<body onload="picksFocus()">
-<?
+<?php
 	include("header.php");
 ?>
 		<div id="bigboard-wrapper">
@@ -37,7 +37,7 @@ ob_start();
 			<tr>
 				<td class="week" width="15%">
 					<select id="weekSelect" onchange="window.location.href = '<?= $_SERVER['PHP_SELF'] ?>?week=' + this.options[selectedIndex].value;">
-<?
+<?php
 	echo "\t\t\t\t\t\t<option value=\"0\"";
 
 	if ($week == 0) {
@@ -58,7 +58,7 @@ ob_start();
 					<br />
 					<a href="<?= $_SERVER['PHP_SELF'] ?>?week=<?= ($week - 1) ?>">Previous</a> | <a href="<?= $_SERVER['PHP_SELF'] ?>?week=<?= ($week + 1) ?>">Next</a>
 				</td>
-<?
+<?php
 	// fetch the users for the current season and set up their column entries
 	$users_query =
 		"SELECT user_name, nick_name, favorite_team" .
@@ -408,7 +408,7 @@ ob_start();
 		</table>
 		</div>
 	</body>
-<?
+<?php
 if (isset($_SESSION['privilege']) && $_SESSION['privilege'] == "A") {
 $time = microtime();
 $time = explode(" ", $time);

@@ -1,4 +1,4 @@
-<?
+<?php
 	if (isset($_COOKIE['style']) && $_COOKIE['style'] == "simple") {
 		$style = $_COOKIE['style'];
 	}

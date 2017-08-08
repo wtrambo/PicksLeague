@@ -1,4 +1,4 @@
-<?
+<?php
 	$season = 2016;
 	$cookieExpirationTime = strtotime("January 31, 2017");
 
