@@ -20,6 +20,8 @@
 		'Jacksonville'	=> 'JAX',	'JAX'	=> 'Jacksonville',
 		'Kansas City'	=> 'KC',	'KC'	=> 'Kansas City' ,
 		'Los Angeles'	=> 'LA',	'LA'	=> 'Los Angeles' ,
+		'LA Chargers'	=> 'LAC',	'LAC'	=> 'LA Chargers',
+		'LA Rams'	=> 'LAR',	'LAR'	=> 'LA Rams',
 		'Miami'		=> 'MIA',	'MIA'	=> 'Miami',
 		'Minnesota'	=> 'MIN',	'MIN'	=> 'Minnesota',
 		'New England'	=> 'NE',	'NE'	=> 'New England',

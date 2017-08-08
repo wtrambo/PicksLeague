@@ -17,6 +17,8 @@ INSERT INTO `pl_teams` VALUES
 	('JAX','Jacksonville','Jaguars'),
 	('KC','Kansas City','Chiefs'),
 	('LA','Los Angeles','Rams'),
+	('LAC','Los Angeles','Chargers'),
+	('LAR','Los Angeles','Rams'),
 	('MIA','Miami','Dolphins'),
 	('MIN','Minnesota','Vikings'),
 	('NE','New England','Patriots'),
