@@ -1,5 +1,5 @@
 <?php
-	$season = 2016;
+	$season = 2017;
 	$cookieExpirationTime = strtotime("January 31, 2018");
 
 	$teamsarray = Array(
@@ -20,7 +20,9 @@
 		'Jacksonville'	=> 'JAX',	'JAX'	=> 'Jacksonville',
 		'Kansas City'	=> 'KC',	'KC'	=> 'Kansas City' ,
 		'Los Angeles'	=> 'LA',	'LA'	=> 'Los Angeles' ,
+		'L.A. Chargers'	=> 'LAC',
 		'LA Chargers'	=> 'LAC',	'LAC'	=> 'LA Chargers',
+		'L.A. Rams'	=> 'LAR',
 		'LA Rams'	=> 'LAR',	'LAR'	=> 'LA Rams',
 		'Miami'		=> 'MIA',	'MIA'	=> 'Miami',
 		'Minnesota'	=> 'MIN',	'MIN'	=> 'Minnesota',
