@@ -124,6 +124,18 @@
 		'vikings'		=> 'Minnesota Vikings',
 	);
   
+	function normalizeAbbreviation($abbreviation) {
+		if ($abbreviation == 'JAC') {
+			return 'JAX';
+		}
+		else if ($abbreviation == 'LA') {
+			return 'LAR';
+		}
+		else {
+			return $abbreviation;
+		}
+	}
+
 	function spaceify($name) {
 		$str = "";
 		for ($i = 0; $i < strlen($name) - 1; $i++) {

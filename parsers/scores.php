@@ -26,11 +26,8 @@
 		$homeTeam = $gameMatches[1][$i];
 		$homeScore = doubleval($gameMatches[2][$i]);
 
-		$awayTeam = ($awayTeam == 'JAC') ? 'JAX' : $awayTeam;
-		$homeTeam = ($homeTeam == 'JAC') ? 'JAX' : $homeTeam;
-
-		$awayTeam = ($awayTeam == 'LA') ? 'LAR' : $awayTeam;
-		$homeTeam = ($homeTeam == 'LA') ? 'LAR' : $homeTeam;
+		$awayTeam = normalizeAbbreviation($awayTeam);
+		$homeTeam = normalizeAbbreviation($homeTeam);
 
 		$query = "CALL update_game('" . $homeTeam . "', '" . $awayTeam . "', " . $season . ", " . $week . ", NULL, " . $homeScore . ", " . $awayScore . ", NULL);";
 
