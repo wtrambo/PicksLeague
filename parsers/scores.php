@@ -29,6 +29,9 @@
 		$awayTeam = ($awayTeam == 'JAC') ? 'JAX' : $awayTeam;
 		$homeTeam = ($homeTeam == 'JAC') ? 'JAX' : $homeTeam;
 
+		$awayTeam = ($awayTeam == 'LA') ? 'LAR' : $awayTeam;
+		$homeTeam = ($homeTeam == 'LA') ? 'LAR' : $homeTeam;
+
 		$query = "CALL update_game('" . $homeTeam . "', '" . $awayTeam . "', " . $season . ", " . $week . ", NULL, " . $homeScore . ", " . $awayScore . ", NULL);";
 
 		if ($argc > 1 && $argv[1] == 'update') {
