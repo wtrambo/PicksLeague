@@ -63,7 +63,7 @@ CREATE TABLE `pl_picks` (
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pl_teams` (
   `short_name` varchar(3) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `team_loaction` varchar(30) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `team_location` varchar(30) COLLATE utf8_bin NOT NULL DEFAULT '',
   `team_name` varchar(30) COLLATE utf8_bin NOT NULL DEFAULT '',
   PRIMARY KEY (`short_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
