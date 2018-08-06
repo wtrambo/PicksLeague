@@ -32,6 +32,7 @@ ob_start();
 <?php
 	include("header.php");
 ?>
+	<div> DEBUG AREA:  Week is: '<?php echo "$week"?>'</div>
 		<div id="bigboard-wrapper">
 		<table id="bigboard">
 			<tr>
