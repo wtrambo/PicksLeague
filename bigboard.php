@@ -38,13 +38,38 @@ ob_start();
 				<td class="week" width="15%">
 					<select id="weekSelect" onchange="window.location.href = '<?= $_SERVER['PHP_SELF'] ?>?week=' + this.options[selectedIndex].value;">
 <?php
+
+	echo "\t\t\t\t\t\t<option value=\"0\"";
+
+	if ($week == -3) {
+		echo " selected=\"selected\"";
+	}
+
+	echo ">Preseason Week 1</option>\n";
+
+	echo "\t\t\t\t\t\t<option value=\"0\"";
+
+	if ($week == -2) {
+		echo " selected=\"selected\"";
+	}
+
+	echo ">Preseason Week 2</option>\n";
+
+	echo "\t\t\t\t\t\t<option value=\"0\"";
+
+	if ($week == -1) {
+		echo " selected=\"selected\"";
+	}
+
+	echo ">Preseason Week 3</option>\n";
+
 	echo "\t\t\t\t\t\t<option value=\"0\"";
 
 	if ($week == 0) {
 		echo " selected=\"selected\"";
 	}
 
-	echo ">Preseason</option>\n";
+	echo ">Preseason Week 4</option>\n";
 
 	for ($i = 1; $i <= 17; $i++) {
 		echo "\t\t\t\t\t\t<option value=\"" . $i . "\"";
