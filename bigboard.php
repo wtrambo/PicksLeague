@@ -103,6 +103,7 @@ ob_start();
 		$team = $user_row['favorite_team'];
 		$nickname = $user_row['nick_name'];
 
+		//Here is where I'll tweak to remove image and set people's name through CSS
 		echo "\t\t\t\t<td class=\"user " . $team . " " . $self . "\" width=\"4%\" onclick=\"viewProfile('" . $nickname . "')\"><img src=\"nameplates/" . strtolower($nickname) . ".png\" alt=\"" . $nickname . "\"/></td>\n";
 	}
 	echo "\t\t\t</tr>\n";
@@ -188,18 +189,18 @@ ob_start();
 			$score = $away_team . " " . $away_score . ", " . $home_team . " " . $home_score;
 
 			if ($showdate == "yes") {
-				echo "\t\t\t\t<td class=\"game gamegroup" . $group . "\" title=\"" . $title . "\"><div class=\"gametext\">" . $away_team . " at " . $home_team . " (" . $spread . ")</div><div class=\"gamescore\">" . $score . "</div></td>\n";
+				echo "\t\t\t\t<td class=\"game gamegroup" . $group . "\" title=\"" . $title . "\"><div class=\"gametext\">" . $away_team . " at " . $home_team . "</div><div class=\"gamescore\">" . $score . "</div></td>\n";
 			}
 			else {
-				echo "\t\t\t\t<td class=\"game gamegroup" . $group . "\" title=\"" . $score . " (" . $title . ")\"><div class=\"gametext\">" . $away_team . " at " . $home_team . " (" . $spread . ")</div></td>\n";
+				echo "\t\t\t\t<td class=\"game gamegroup" . $group . "\" title=\"" . $score . " (" . $title . ")\"><div class=\"gametext\">" . $away_team . " at " . $home_team . "</div></td>\n";
 			}
 		}
 		else {
 			if ($showdate == "yes") {
-				echo "\t\t\t\t<td class=\"game gamegroup" . $group . "\" title=\"" . $title . "\"><div class=\"gametext\">" . $away_team . " at " . $home_team . " (" . $spread . ")</div><div class=\"gamedate\">" . $date . "</div></td>\n";
+				echo "\t\t\t\t<td class=\"game gamegroup" . $group . "\" title=\"" . $title . "\"><div class=\"gametext\">" . $away_team . " at " . $home_team . "</div><div class=\"gamedate\">" . $date . "</div></td>\n";
 			}
 			else {
-				echo "\t\t\t\t<td class=\"game gamegroup" . $group . "\" title=\"" . $title . "\"><div class=\"gametext\">" . $away_team . " at " . $home_team . " (" . $spread . ")</div></td>\n";
+				echo "\t\t\t\t<td class=\"game gamegroup" . $group . "\" title=\"" . $title . "\"><div class=\"gametext\">" . $away_team . " at " . $home_team . "</div></td>\n";
 			}
 		}
 
