@@ -21,7 +21,10 @@ ob_start();
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-		<title><?php if ($week != 0) { ?>Week <?= $week ?><?php } else { ?>Preseason<?php } ?> &laquo; The Picks League &laquo; Coinflipper</title>
+		<title>
+			<!-- <?php if ($week != 0) { ?>Week <?= $week ?><?php } else { ?>Preseason<?php } ?> &laquo; The Picks League &laquo; Coinflipper -->
+			Kickoff41
+		</title>
 		<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="<?= $style ?>.css" />
 		<script type="text/javascript" src="misc.js"></script>
@@ -105,7 +108,7 @@ ob_start();
 		$nickname = $user_row['nick_name'];
 
 		//Here is where I'll tweak to remove image and set people's name through CSS
-		echo "\t\t\t\t<td class=\"user " . $team . " " . $self . "\" width=\"4%\" onclick=\"viewProfile('" . $nickname . "')\"><span class=\"rotateText\">" . $nickname . "</></td>\n";
+		echo "\t\t\t\t<td class=\"user rotateText " . $team . " " . $self . "\" width=\"4%\" onclick=\"viewProfile('" . $nickname . "')\">" . $nickname . "</td>\n";
 	}
 	echo "\t\t\t</tr>\n";
 
