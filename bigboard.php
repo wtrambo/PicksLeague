@@ -29,13 +29,34 @@ ob_start();
 		<link rel="stylesheet" type="text/css" href="<?= $style ?>.css" />
 		<script type="text/javascript" src="misc.js"></script>
 		<script type="text/javascript" src="changepick.js"></script>
+		<style>
+			#nameplate {
+				position: relative; /*make container the closest positioned ancestor*/
+				display: inline-block;
+				/* height: 400px; */
+				min-width: 30px; /*same as line-height of rotated text*/
+			}
+
+			#nameplate .rotateText {
+				text-align: center;
+				overflow: hidden;
+				height: 30px;
+				line-height: 30px;
+				/* width: 400px; matches the height of the container */
+				position: absolute;
+				bottom: -32px; /*0 = bottom of container, then subtract (line-height+border)*/
+				transform: rotate(-90deg);
+				transform-origin: top left;
+			}
+
+		</style>
 	</head>
 
 	<body onload="picksFocus()">
 <?php
 	include("header.php");
 ?>
-	<div> DEBUG AREA:  Week is: '<?php echo "$week"?>'</div>
+	<!-- <div> DEBUG AREA:  Week is: '<?php echo "$week"?>'</div> -->
 		<div id="bigboard-wrapper">
 		<table id="bigboard">
 			<tr>
@@ -108,7 +129,7 @@ ob_start();
 		$nickname = $user_row['nick_name'];
 
 		//Here is where I'll tweak to remove image and set people's name through CSS
-		echo "\t\t\t\t<td class=\"user " . $team . " " . $self . "\" width=\"4%\" onclick=\"viewProfile('" . $nickname . "')\"><div class=\"rotateText\">" . $nickname . "</></td>\n";
+		echo "\t\t\t\t<td class=\"user " . $team . " " . $self . "\" width=\"4%\" onclick=\"viewProfile('" . $nickname . "')\"><div id=\"nameplate\"><div class=\"rotateText\">" . $nickname . "</></></td>\n";
 	}
 	echo "\t\t\t</tr>\n";
 

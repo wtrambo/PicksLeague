@@ -37,15 +37,6 @@ h1 {
 	color: green;
 }
 
-.rotateText {
-	-webkit-transform: rotate(90deg);
-	-moz-transform: rotate(90deg);
-	-o-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	transform: rotate(90deg);
-	background-color: rgb(221, 000, 000);
-}
-
 label {
 	cursor: pointer;
 }
