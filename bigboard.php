@@ -108,7 +108,7 @@ ob_start();
 		$nickname = $user_row['nick_name'];
 
 		//Here is where I'll tweak to remove image and set people's name through CSS
-		echo "\t\t\t\t<td class=\"user rotateText " . $team . " " . $self . "\" width=\"4%\" onclick=\"viewProfile('" . $nickname . "')\">" . $nickname . "</td>\n";
+		echo "\t\t\t\t<td class=\"user " . $team . " " . $self . "\" width=\"4%\" onclick=\"viewProfile('" . $nickname . "')\"><span class=\"rotateText\">" . $nickname . "</></td>\n";
 	}
 	echo "\t\t\t</tr>\n";
 
