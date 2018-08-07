@@ -29,27 +29,6 @@ ob_start();
 		<link rel="stylesheet" type="text/css" href="<?= $style ?>.css" />
 		<script type="text/javascript" src="misc.js"></script>
 		<script type="text/javascript" src="changepick.js"></script>
-		<style>
-			#nameplate {
-				position: relative; /*make container the closest positioned ancestor*/
-				display: inline-block;
-				/* height: 400px; */
-				min-width: 30px; /*same as line-height of rotated text*/
-			}
-
-			#nameplate .rotateText {
-				text-align: center;
-				overflow: hidden;
-				height: 30px;
-				line-height: 30px;
-				/* width: 400px; matches the height of the container */
-				position: absolute;
-				bottom: -32px; /*0 = bottom of container, then subtract (line-height+border)*/
-				transform: rotate(-90deg);
-				transform-origin: top left;
-			}
-
-		</style>
 	</head>
 
 	<body onload="picksFocus()">

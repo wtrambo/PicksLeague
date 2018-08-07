@@ -304,6 +304,23 @@ form#loginnav {
 	border-bottom: 1px solid black;
 }
 
+#nameplate {
+	position: relative; /*make container the closest positioned ancestor*/
+	display: inline-block;
+	min-width: 30px; /*same as line-height of rotated text*/
+}
+
+#nameplate .rotateText {
+	text-align: center;
+	overflow: hidden;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	bottom: -32px; /*0 = bottom of container, then subtract (line-height+border)*/
+	transform: rotate(-90deg);
+	transform-origin: top left;
+}
+
 
 
 /* stuff for other parts of the site */
