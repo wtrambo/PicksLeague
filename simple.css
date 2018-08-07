@@ -295,16 +295,6 @@ form#loginnav {
 	border-top: 1px dotted black;
 }
 
-.rotateText {
-	-webkit-transform: rotate(90deg);
-	-moz-transform: rotate(90deg);
-	-o-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-
-
-
 /* stuff for other parts of the site */
 
 .fancyTable {
