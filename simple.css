@@ -295,7 +295,7 @@ form#loginnav {
 	border-top: 1px dotted black;
 }
 
-#bigboard .rotateText {
+.rotateText {
 	-webkit-transform: rotate(90deg);
 	-moz-transform: rotate(90deg);
 	-o-transform: rotate(90deg);
