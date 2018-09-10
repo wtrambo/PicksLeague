@@ -3,7 +3,7 @@
 	include(realpath(__DIR__ . '/../') . '/connect.php');
 	include(realpath(__DIR__ . '/../') . '/misc.php');
 
-	date_default_timezone_set("US/Eastern");
+	date_default_timezone_set("America/New_York");
 
 	// prevent caching
 	header('Cache-Control: no-cache');

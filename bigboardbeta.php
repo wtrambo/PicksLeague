@@ -55,13 +55,23 @@ ob_start();
 					<a href="<?= $_SERVER['PHP_SELF'] ?>?week=<?= ($week - 1) ?>">Previous</a> | <a href="<?= $_SERVER['PHP_SELF'] ?>?week=<?= ($week + 1) ?>">Next</a>
 				</td>
 <?php
-	// fetch the users for the current season and set up their column entries
-	$users_query =
-		"SELECT user_name, nick_name, favorite_team" .
-		"  FROM pl_users" .
-		" WHERE season = " . $season .
-		" ORDER BY display_rank";
 
+	$order_clause = "
+
+        ORDER BY display_rank";
+
+        if (isset($_SESSION['username']) ) {
+                $order_clause = " \n\n ORDER BY ( '". $_SESSION['username'] ."' = user_name) DESC, display_rank";
+        }
+        
+    // fetch the users for the current season and set up their column entries
+    $users_query =
+        "SELECT user_name, nick_name, favorite_team" .
+        "  FROM pl_users" .
+        " WHERE season = " . $season;
+
+    $users_query = $users_query . $order_clause;
+	
 	$users_result = mysqli_query($link, $users_query) or die(mysqli_error($link));
 
 	while ($user_row = mysqli_fetch_assoc($users_result)) {
@@ -174,19 +184,26 @@ ob_start();
 			}
 		}
 
-		// fetch each user's picks for this game
-		$picks_query = "
-			SELECT	user_name, pick, push
-			FROM	pl_user_picks_vw
-			WHERE
-				season = " . $season . " AND
-				week = " . $week . " AND
-				home_team = '" . $home_team . "' AND
-				away_team = '" . $away_team . "'
+$order_clause = "
+        
+        ORDER BY display_rank";
 
-			ORDER BY
-				display_rank
-		";
+        if (isset($_SESSION['username']) ) {
+                $order_clause = "ORDER BY ( '". $_SESSION['username'] ."' = user_name) DESC, display_rank";
+        }
+
+                // fetch each user's picks for this game
+                $picks_query = "
+                        SELECT  user_name, pick, push
+                        FROM    pl_user_picks_vw
+                        WHERE
+                                season = " . $season . " AND
+                                week = " . $week . " AND
+                                home_team = '" . $home_team . "' AND
+                                away_team = '" . $away_team . "'";
+
+		$picks_query = $picks_query . $order_clause;
+
 		$picks_result = mysqli_query($link, $picks_query) or die(mysqli_error($link));
 
 		while ($pick_row = mysqli_fetch_assoc($picks_result)) {

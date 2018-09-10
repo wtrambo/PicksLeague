@@ -29,8 +29,7 @@
 		}
 		if (isset($days) && (($days < 0) || (isset($week) && ($week <= 0)))) {
 			// Let's just ignore the preseason for the immediate future.
-			$week = -3;
-			//$week = 1;
+			$week = 1;
 		}
 		else {
 			if (isset($days)) {

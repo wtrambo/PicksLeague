@@ -167,11 +167,12 @@ form#loginnav {
 	background-color: #ffffff;
 	border-bottom: 1px solid black;
 	border-top: 1px solid black;
-	min-height: 90px;
+	height: 130px;
 	cursor: pointer;
-	padding-top: 0px;
+	padding-top: 2px;
 	padding-left: 0px;
 	padding-bottom: 2px;
+	word-break: keep-all;
 }
 
 #bigboard .game {
@@ -179,7 +180,7 @@ form#loginnav {
 	background: url("images/bg.png");
 	/*background-color: rgb(154, 164, 255);*/
 	background-color: rgb(125, 125, 240);
-	background-repeat: repeat-x;
+	/* background-repeat: repeat-x; */
 	border-left: 1px solid black;
 	white-space: nowrap;
 	line-height: 11px;
@@ -307,16 +308,16 @@ form#loginnav {
 #nameplate {
 	position: relative; /*make container the closest positioned ancestor*/
 	display: inline-block;
-	min-width: 30px; /*same as line-height of rotated text*/
+	min-width: 110px; /*same as line-height of rotated text*/
 }
 
 #nameplate .rotateText {
-	text-align: center;
+	text-align: left;
 	overflow: hidden;
-	height: 30px;
+	height: 50px;
 	line-height: 30px;
 	position: absolute;
-	bottom: -32px; /*0 = bottom of container, then subtract (line-height+border)*/
+	bottom: -50px; /*0 = bottom of container, then subtract (line-height+border)*/
 	transform: rotate(-90deg);
 	transform-origin: top left;
 }
